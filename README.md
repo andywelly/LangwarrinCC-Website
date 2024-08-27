@@ -18,5 +18,5 @@ This project is a web application developed as a part of IT Project COMP30022 at
 
 
 # Links
-- [https://it-project-langwarrin.atlassian.net/wiki/spaces/SD/overview?homepageId=360555](Confluence)
-- [https://www.langwarrincc.org.au/](Original-Langwarrin-Community-Centre-Website)
+- (Confluence)[https://it-project-langwarrin.atlassian.net/wiki/spaces/SD/overview?homepageId=360555]
+- (Original Langwarrin Community Centre Website)[https://www.langwarrincc.org.au/]
