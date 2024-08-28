@@ -6,8 +6,8 @@ This project is a web application developed as a part of IT Project COMP30022 at
 # Technologies Used
 - Frontend: HTML, CSS, JavaScript, React.js
 - Backend: Strapi
-- Database: MySQL
-- Deployment:
+- Database: MongoDB
+- Deployment: Heroku
 
 # Project Members and Roles
 - Andwele Ancheta: Scrum Master, Frontend Engineer
