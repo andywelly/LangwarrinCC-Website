@@ -1,13 +1,13 @@
 //import React from "react";
 import Footer from "./Footer";
-import Header from "./Header";
 import Background from "./Background";
+import NavigationBar from "./Navigation_Bar";
 
 
 function App() {
     return (
         <div>
-            <Header/>
+            <NavigationBar></NavigationBar>
             <Background/>
             <Footer/>
         </div>
