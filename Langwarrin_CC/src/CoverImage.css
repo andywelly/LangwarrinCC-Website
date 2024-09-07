@@ -1,0 +1,33 @@
+.cover-image-container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .cover-image {
+    width: 100%;
+    height: auto;
+    filter: brightness(50%); /* Darkens the image */
+  }
+  
+  .cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem; /* Adjust the size as needed */
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Optional shadow for better readability */
+  }
+  
+  .cover-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds a shadow for better contrast */
+  }
+  
