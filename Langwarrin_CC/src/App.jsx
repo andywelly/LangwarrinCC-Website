@@ -1,14 +1,16 @@
 //import React from "react";
 import Footer from "./Footer";
-import Background from "./Background";
+import CoverImage from "./CoverImage";
 import NavigationBar from "./Navigation_Bar";
+import HomeCard from "./Card";
 
 
 function App() {
     return (
         <div>
             <NavigationBar></NavigationBar>
-            <Background/>
+            <CoverImage/>
+            <HomeCard></HomeCard>
             <Footer/>
         </div>
     );
