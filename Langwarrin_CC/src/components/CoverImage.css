@@ -2,12 +2,14 @@
     position: relative;
     text-align: center;
     color: white;
+    padding: 10px;
   }
   
   .cover-image {
-    width: 100%;
+    width: 80%;
     height: auto;
     filter: brightness(50%); /* Darkens the image */
+    border-radius: 10px;
   }
   
   .cover-text {

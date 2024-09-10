@@ -1,0 +1,35 @@
+.homecards-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.card-text {
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 10px;
+    font-size: 1.25em;
+}
+
+.card-text-card {
+    margin: 0 10px; /* Adjust margin as needed */
+    border: none; /* Remove border from text card */
+}
+
+.card-image {
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the card horizontally */
+    border: none; /* Remove border from image card */
+}
+
+.card-image img {
+    width: 100%; /* Ensure image takes up the full width of the card */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+}

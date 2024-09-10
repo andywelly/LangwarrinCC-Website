@@ -29,7 +29,7 @@ function NavigationBar() {
             <Nav className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/services">Services</Nav.Link>
-              <Nav.Link href="/childcare">Childcare</Nav.Link>
+              <Nav.Link href="/chilcare">Childcare</Nav.Link>
               <Nav.Link href="/forms">Forms</Nav.Link>
               <Nav.Link href="/about">About Us</Nav.Link>
               {/* <NavDropdown title="Services" id="services-dropdown">

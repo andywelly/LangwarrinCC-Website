@@ -2,6 +2,7 @@
 import Footer from "../components/Footer";
 import CoverImage from "../components/CoverImage";
 import NavigationBar from "../components/Navigation_Bar";
+import Grid from "../components/Grid";
 
 
 function Childcare() {
@@ -9,7 +10,7 @@ function Childcare() {
         <div>
             <NavigationBar></NavigationBar>
             <CoverImage/>
-            <h1>Childcare</h1>
+            <Grid></Grid>
             <Footer/>
         </div>
     );
