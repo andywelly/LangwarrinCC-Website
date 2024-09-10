@@ -1,6 +1,6 @@
 import Image from 'react-bootstrap/Image';
 import Imagesrc from '../assets/Background.jpg';
-import './CoverImage.css'; // Make sure to import the CSS file
+import './styles/CoverImage.css'; // Make sure to import the CSS file
 
 function CoverImage() {
   return (

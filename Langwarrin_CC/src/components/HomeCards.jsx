@@ -3,7 +3,7 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import Nav from 'react-bootstrap/Nav';
 import CardImage from '../assets/Building.jpg';
 import Button from 'react-bootstrap/Button';
-import './HomeCards.css';
+import './styles/HomeCards.css';
 
 function HomeCards() {
   return (

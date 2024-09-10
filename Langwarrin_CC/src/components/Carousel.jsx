@@ -3,7 +3,7 @@ import Image1 from '../assets/Thrive.png';
 import Image2 from '../assets/Exercise.jpg';
 import Image3 from '../assets/Stillness.png';
 import Image4 from '../assets/Seniors.png'
-import './Carousel.css';
+import './styles/Carousel.css';
 
 function HomeCarousel() {
   return (

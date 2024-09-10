@@ -20,3 +20,25 @@
     text-align: center; /* Centers text within the caption */
   }
   
+  .carousel-container {
+    position: relative;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    filter: invert(1); /* Inverts color to ensure arrows are visible on various backgrounds */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Add a background color to make the arrows stand out */
+    border-radius: 50%; /* Round the background */
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+  }
+  
+  .carousel-control-prev-icon::before,
+  .carousel-control-next-icon::before {
+    font-size: 24px; /* Adjust size for better readability */
+  }
+  
