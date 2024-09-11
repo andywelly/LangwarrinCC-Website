@@ -1,0 +1,11 @@
+.Navigation-Bar {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    border-radius: 10px;
+}
