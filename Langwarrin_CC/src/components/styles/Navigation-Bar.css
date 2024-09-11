@@ -1,0 +1,46 @@
+.Navigation-Bar {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    border-radius: 10px;
+}
+
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Specific styling for Nav.Link text */
+.links .nav-link {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #ffffff; /* Set text color */
+    position: relative; /* Position relative to enable pseudo-element styling */
+    border-radius: 5px;
+}
+
+/* Adding a background specifically behind the text */
+.links .nav-link::before {
+    content: attr(href); /* Use content property to mirror the link text */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    color: #ffffff; /* Text color on the pseudo-element */
+    padding: 0 5px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    z-index: -1; /* Place behind the actual text */
+    pointer-events: none; /* Make it unclickable */
+    white-space: nowrap; /* Prevent text wrap */
+}
+
+/* Hover effect for better readability */
+.links .nav-link:hover::before {
+    background-color: rgba(0, 0, 0, 0.9); /* Darker background on hover */
+}
