@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 //import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Logo from '../assets/Logo.png'; // Import the logo image
+import Button from 'react-bootstrap/esm/Button';
 import './styles/Navigation-Bar.css'
 
 function NavigationBar() {
@@ -28,12 +29,12 @@ function NavigationBar() {
               <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-end flex-grow-1 pe-3 links">
-                <Nav.Link href="/" className='links'>Home</Nav.Link>
-                <Nav.Link href="/services">Services</Nav.Link>
-                <Nav.Link href="/childcare">Childcare</Nav.Link>
-                <Nav.Link href="/forms">Forms</Nav.Link>
-                <Nav.Link href="/about">About Us</Nav.Link>
+              <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav.Link href="/" className='links'><Button variant="dark">Home</Button></Nav.Link>
+                <Nav.Link href="/services"><Button variant="dark">Services</Button></Nav.Link>
+                <Nav.Link href="/childcare"><Button variant="dark">Childcare</Button></Nav.Link>
+                <Nav.Link href="/forms"><Button variant="dark">Forms</Button></Nav.Link>
+                <Nav.Link href="/about"><Button variant="dark">About Us</Button></Nav.Link>
                 {/* <NavDropdown title="Services" id="services-dropdown">
                   <NavDropdown.Item href="/Services">Service 1</NavDropdown.Item>
                   <NavDropdown.Item href="#service2">Service 2</NavDropdown.Item>
