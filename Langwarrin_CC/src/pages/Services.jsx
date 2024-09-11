@@ -1,14 +1,11 @@
-//import React from "react";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CoverImage from "../components/CoverImage";
-import NavigationBar from "../components/Navigation_Bar";
 
 
 function Services() {
     return (
         <div>
-            <NavigationBar></NavigationBar>
-            <CoverImage/>
+            <Header/>
             <h1>Services</h1>
             <Footer/>
         </div>
