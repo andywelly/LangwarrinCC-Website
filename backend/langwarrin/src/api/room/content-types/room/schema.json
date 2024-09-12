@@ -4,7 +4,8 @@
   "info": {
     "singularName": "room",
     "pluralName": "rooms",
-    "displayName": "Room"
+    "displayName": "Room",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,20 +19,24 @@
       "type": "integer"
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "PermHireFee": {
-      "type": "decimal"
+      "type": "string"
     },
     "CommHireFee": {
-      "type": "decimal"
+      "type": "string"
+    },
+    "Notes": {
+      "type": "text"
     }
   }
 }

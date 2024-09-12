@@ -410,6 +410,7 @@ export interface ApiRoomRoom extends Schema.CollectionType {
     singularName: 'room';
     pluralName: 'rooms';
     displayName: 'Room';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -417,9 +418,10 @@ export interface ApiRoomRoom extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String;
     Capacity: Attribute.Integer;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    PermHireFee: Attribute.Decimal;
-    CommHireFee: Attribute.Decimal;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    PermHireFee: Attribute.String;
+    CommHireFee: Attribute.String;
+    Notes: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
