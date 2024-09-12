@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * sesssion service
+ * session service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::sesssion.sesssion');
+module.exports = createCoreService('api::session.session');

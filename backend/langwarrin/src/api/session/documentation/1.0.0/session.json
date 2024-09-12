@@ -1,5 +1,5 @@
 {
-  "/sesssions": {
+  "/sessions": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SesssionListResponse"
+                "$ref": "#/components/schemas/SessionListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Sesssion"
+        "Session"
       ],
       "parameters": [
         {
@@ -170,7 +170,7 @@
           }
         }
       ],
-      "operationId": "get/sesssions"
+      "operationId": "get/sessions"
     },
     "post": {
       "responses": {
@@ -179,7 +179,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SesssionResponse"
+                "$ref": "#/components/schemas/SessionResponse"
               }
             }
           }
@@ -236,23 +236,23 @@
         }
       },
       "tags": [
-        "Sesssion"
+        "Session"
       ],
       "parameters": [],
-      "operationId": "post/sesssions",
+      "operationId": "post/sessions",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SesssionRequest"
+              "$ref": "#/components/schemas/SessionRequest"
             }
           }
         }
       }
     }
   },
-  "/sesssions/{id}": {
+  "/sessions/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -260,7 +260,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SesssionResponse"
+                "$ref": "#/components/schemas/SessionResponse"
               }
             }
           }
@@ -317,7 +317,7 @@
         }
       },
       "tags": [
-        "Sesssion"
+        "Session"
       ],
       "parameters": [
         {
@@ -331,7 +331,7 @@
           }
         }
       ],
-      "operationId": "get/sesssions/{id}"
+      "operationId": "get/sessions/{id}"
     },
     "put": {
       "responses": {
@@ -340,7 +340,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SesssionResponse"
+                "$ref": "#/components/schemas/SessionResponse"
               }
             }
           }
@@ -397,7 +397,7 @@
         }
       },
       "tags": [
-        "Sesssion"
+        "Session"
       ],
       "parameters": [
         {
@@ -411,13 +411,13 @@
           }
         }
       ],
-      "operationId": "put/sesssions/{id}",
+      "operationId": "put/sessions/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/SesssionRequest"
+              "$ref": "#/components/schemas/SessionRequest"
             }
           }
         }
@@ -488,7 +488,7 @@
         }
       },
       "tags": [
-        "Sesssion"
+        "Session"
       ],
       "parameters": [
         {
@@ -502,7 +502,7 @@
           }
         }
       ],
-      "operationId": "delete/sesssions/{id}"
+      "operationId": "delete/sessions/{id}"
     }
   }
 }

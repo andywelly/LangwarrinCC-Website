@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * sesssion router
+ * session router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::sesssion.sesssion');
+module.exports = createCoreRouter('api::session.session');

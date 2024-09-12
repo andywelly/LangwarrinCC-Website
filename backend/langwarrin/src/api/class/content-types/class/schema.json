@@ -35,10 +35,10 @@
     "StartDate": {
       "type": "date"
     },
-    "sessions": {
+    "session": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::sesssion.sesssion",
+      "target": "api::session.session",
       "mappedBy": "class"
     }
   }

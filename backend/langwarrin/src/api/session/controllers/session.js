@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * sesssion controller
+ * session controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::sesssion.sesssion');
+module.exports = createCoreController('api::session.session');

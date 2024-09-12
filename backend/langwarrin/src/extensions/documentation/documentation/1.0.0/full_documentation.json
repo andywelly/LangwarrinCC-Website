@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-09-12T12:16:27.968Z"
+    "x-generation-date": "2024-09-12T12:52:53.878Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -123,7 +123,7 @@
                 "type": "string",
                 "format": "date"
               },
-              "sessions": {
+              "session": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -218,7 +218,7 @@
             "type": "string",
             "format": "date"
           },
-          "sessions": {
+          "session": {
             "type": "object",
             "properties": {
               "data": {
@@ -246,9 +246,6 @@
                           "format": "time",
                           "example": "12:54.000"
                         },
-                        "Recurring": {
-                          "type": "boolean"
-                        },
                         "DayOfWeek": {
                           "type": "string",
                           "enum": [
@@ -260,6 +257,9 @@
                             "Saturday",
                             "Sunday"
                           ]
+                        },
+                        "Recurring": {
+                          "type": "boolean"
                         },
                         "class": {
                           "type": "object",
@@ -301,7 +301,7 @@
                                       "type": "string",
                                       "format": "date"
                                     },
-                                    "sessions": {
+                                    "session": {
                                       "type": "object",
                                       "properties": {
                                         "data": {
@@ -1541,7 +1541,7 @@
           }
         }
       },
-      "SesssionRequest": {
+      "SessionRequest": {
         "type": "object",
         "required": [
           "data"
@@ -1564,9 +1564,6 @@
                 "format": "time",
                 "example": "12:54.000"
               },
-              "Recurring": {
-                "type": "boolean"
-              },
               "DayOfWeek": {
                 "type": "string",
                 "enum": [
@@ -1578,6 +1575,9 @@
                   "Saturday",
                   "Sunday"
                 ]
+              },
+              "Recurring": {
+                "type": "boolean"
               },
               "class": {
                 "oneOf": [
@@ -1594,24 +1594,24 @@
           }
         }
       },
-      "SesssionListResponseDataItem": {
+      "SessionListResponseDataItem": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
           "attributes": {
-            "$ref": "#/components/schemas/Sesssion"
+            "$ref": "#/components/schemas/Session"
           }
         }
       },
-      "SesssionListResponse": {
+      "SessionListResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/SesssionListResponseDataItem"
+              "$ref": "#/components/schemas/SessionListResponseDataItem"
             }
           },
           "meta": {
@@ -1640,7 +1640,7 @@
           }
         }
       },
-      "Sesssion": {
+      "Session": {
         "type": "object",
         "properties": {
           "Date": {
@@ -1657,9 +1657,6 @@
             "format": "time",
             "example": "12:54.000"
           },
-          "Recurring": {
-            "type": "boolean"
-          },
           "DayOfWeek": {
             "type": "string",
             "enum": [
@@ -1671,6 +1668,9 @@
               "Saturday",
               "Sunday"
             ]
+          },
+          "Recurring": {
+            "type": "boolean"
           },
           "class": {
             "type": "object",
@@ -1712,7 +1712,7 @@
                         "type": "string",
                         "format": "date"
                       },
-                      "sessions": {
+                      "session": {
                         "type": "object",
                         "properties": {
                           "data": {
@@ -1740,9 +1740,6 @@
                                       "format": "time",
                                       "example": "12:54.000"
                                     },
-                                    "Recurring": {
-                                      "type": "boolean"
-                                    },
                                     "DayOfWeek": {
                                       "type": "string",
                                       "enum": [
@@ -1754,6 +1751,9 @@
                                         "Saturday",
                                         "Sunday"
                                       ]
+                                    },
+                                    "Recurring": {
+                                      "type": "boolean"
                                     },
                                     "class": {
                                       "type": "object",
@@ -2177,22 +2177,22 @@
           }
         }
       },
-      "SesssionResponseDataObject": {
+      "SessionResponseDataObject": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
           "attributes": {
-            "$ref": "#/components/schemas/Sesssion"
+            "$ref": "#/components/schemas/Session"
           }
         }
       },
-      "SesssionResponse": {
+      "SessionResponse": {
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/SesssionResponseDataObject"
+            "$ref": "#/components/schemas/SessionResponseDataObject"
           },
           "meta": {
             "type": "object"
@@ -3419,7 +3419,7 @@
         "operationId": "delete/rooms/{id}"
       }
     },
-    "/sesssions": {
+    "/sessions": {
       "get": {
         "responses": {
           "200": {
@@ -3427,7 +3427,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SesssionListResponse"
+                  "$ref": "#/components/schemas/SessionListResponse"
                 }
               }
             }
@@ -3484,7 +3484,7 @@
           }
         },
         "tags": [
-          "Sesssion"
+          "Session"
         ],
         "parameters": [
           {
@@ -3590,7 +3590,7 @@
             }
           }
         ],
-        "operationId": "get/sesssions"
+        "operationId": "get/sessions"
       },
       "post": {
         "responses": {
@@ -3599,7 +3599,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SesssionResponse"
+                  "$ref": "#/components/schemas/SessionResponse"
                 }
               }
             }
@@ -3656,23 +3656,23 @@
           }
         },
         "tags": [
-          "Sesssion"
+          "Session"
         ],
         "parameters": [],
-        "operationId": "post/sesssions",
+        "operationId": "post/sessions",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SesssionRequest"
+                "$ref": "#/components/schemas/SessionRequest"
               }
             }
           }
         }
       }
     },
-    "/sesssions/{id}": {
+    "/sessions/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -3680,7 +3680,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SesssionResponse"
+                  "$ref": "#/components/schemas/SessionResponse"
                 }
               }
             }
@@ -3737,7 +3737,7 @@
           }
         },
         "tags": [
-          "Sesssion"
+          "Session"
         ],
         "parameters": [
           {
@@ -3751,7 +3751,7 @@
             }
           }
         ],
-        "operationId": "get/sesssions/{id}"
+        "operationId": "get/sessions/{id}"
       },
       "put": {
         "responses": {
@@ -3760,7 +3760,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SesssionResponse"
+                  "$ref": "#/components/schemas/SessionResponse"
                 }
               }
             }
@@ -3817,7 +3817,7 @@
           }
         },
         "tags": [
-          "Sesssion"
+          "Session"
         ],
         "parameters": [
           {
@@ -3831,13 +3831,13 @@
             }
           }
         ],
-        "operationId": "put/sesssions/{id}",
+        "operationId": "put/sessions/{id}",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SesssionRequest"
+                "$ref": "#/components/schemas/SessionRequest"
               }
             }
           }
@@ -3908,7 +3908,7 @@
           }
         },
         "tags": [
-          "Sesssion"
+          "Session"
         ],
         "parameters": [
           {
@@ -3922,7 +3922,7 @@
             }
           }
         ],
-        "operationId": "delete/sesssions/{id}"
+        "operationId": "delete/sessions/{id}"
       }
     },
     "/upload": {
