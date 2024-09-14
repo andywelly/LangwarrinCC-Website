@@ -26,6 +26,22 @@ header h1 {
   font-weight: 200;
 }
 
+text {
+  color: #8B8484;
+  font-family: "Roboto";
+  font-size: 25px;
+  text-align: center
+}
+
+article {
+  color: #88c483;
+
+  font-size: 3rem; /* Adjust the size as needed */
+  font-weight: bold;
+}
+
+
+
 footer {
   position: absolute;
   text-align: center;
