@@ -1,7 +1,8 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Computer from '../assets/Computer.png';
-import ServicesButton from "../components/ServicesButton";
+import ServicesGrid from "../components/ServicesGrid";
+
+
 
 function Services() {
     return (
@@ -10,12 +11,16 @@ function Services() {
         <Header/>
         <p/><p/><p/>
         <article><center>Services</center></article>
-        <text><center> Connecting communities, fostering growth, and creating a place where everyone belongs.</center></text>
-        <text><center>Click on the icon to view each form</center></text>
+        <div className="text"><center> 
+            Connecting communities, fostering growth, and creating a place where everyone belongs.
+            
+            <p>Click on the icon to view each form<br/><br/><br/></p>
+        </center></div>
         
-        <ServicesGrid/>
-        <ServicesButton Logo={Computer}/>
-        <ServicesButton Logo={Computer}/>
+        
+        <ServicesGrid Summary/>
+        
+        
         <Footer/>
             
     </div>
