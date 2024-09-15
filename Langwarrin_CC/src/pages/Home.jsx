@@ -3,6 +3,7 @@
 import Header from "../components/Header";
 import HomeCarousel from "../components/Carousel";
 import HomeCards from "../components/HomeCards";
+import Footer from "../components/Footer";
 
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
             <Header/>
             <HomeCards/>
             <HomeCarousel/>
+            <Footer/>
         </div>
     );
 }
