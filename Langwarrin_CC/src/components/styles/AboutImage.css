@@ -1,0 +1,19 @@
+.image-with-title {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.image-with-title h1 {
+    color: #6c956f; /* Change color to match the style */
+    font-size: 2.5rem;
+}
+
+.community-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+}
