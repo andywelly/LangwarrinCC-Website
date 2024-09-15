@@ -13,7 +13,7 @@ function Footer() {
                 <div className="footer-section">
                     <p>2 Lang Road</p>
                     <p>Langwarrin VIC 3910</p>
-                    <p>(03) 9789 76</p>
+                    <p>(03) 9789 7653</p>
                     <p>reception@langwarrincc.org.au</p>
                 </div>
 
