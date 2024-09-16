@@ -34,7 +34,6 @@ function Grid() {
 
   return (
     <Row xs={1} md={2} className="g-4">
-      c
       {cardData.map((card, idx) => (
         <Col key={idx}>
           <Card>
@@ -49,7 +48,7 @@ function Grid() {
               <Card.Text>{card.text}</Card.Text>
               <Button
                 variant="primary"
-                onClick={() => handleReadMore(cardData.title)}
+                onClick={() => handleReadMore(card.title)}
               >
                 Read More
               </Button>
