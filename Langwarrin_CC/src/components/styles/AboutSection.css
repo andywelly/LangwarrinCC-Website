@@ -1,0 +1,19 @@
+.information-section {
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    width: 60%;
+    margin: auto;
+}
+
+.information-section h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin: 10px;
+}
+
+.information-section p {
+    color: #6c956f; /* Match with green text style */
+    font-size: 1.1rem;
+    margin: 10px;
+}

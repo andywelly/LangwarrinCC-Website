@@ -12,7 +12,7 @@ function NavigationBar() {
     <div className='Navigation-Bar'>
       <Navbar expand="lg" className="bg-transparent mb-3 navbar-custom">
         <Container fluid>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/">
             <img
               src={Logo}
               alt="Logo"
