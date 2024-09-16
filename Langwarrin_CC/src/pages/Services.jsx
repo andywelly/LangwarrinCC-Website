@@ -1,14 +1,40 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ServicesGrid from "../components/ServicesGrid";
+import ServicesButton from "../components/ServicesButton";
+
+import Brochure from '../assets/icons8-brochure-100.png';
+
+const BrochureLink =  '/'
 
 
 function Services() {
     return (
-        <div>
-            <Header/>
-            <h1>Services</h1>
-            <Footer/>
-        </div>
+         
+    <div>
+        <Header/>
+        <p/><p/><p/>
+        <article><center>Services</center></article>
+        <div className="text"><center> 
+            Connecting communities, fostering growth, and creating a place where everyone belongs.
+            
+            <p>Click on the icon to view each form<br/><br/><br/></p>
+        </center></div>
+        
+        
+        <ServicesGrid Summary/>
+        
+        
+        <article><center> <br/><br/>Current Brochure</center></article>
+        <div className="text"><center> 
+            Detailed information about our services can be found on our brochure
+            <br/><br/>
+        </center></div>
+        <ServicesButton Logo={Brochure} Link={BrochureLink}/>
+        <Footer/>
+            
+    </div>
+       
     );
 }
 
