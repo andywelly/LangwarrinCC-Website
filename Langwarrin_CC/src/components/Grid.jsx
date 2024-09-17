@@ -33,27 +33,74 @@ function Grid() {
   ];
 
   return (
-    <Row xs={1} md={2} className="g-4">
+    <Row xs={1} md={1} className="g-4">
       {cardData.map((card, idx) => (
         <Col key={idx}>
-          <Card>
-            <Card.Img
-              variant="top"
-              src={card.imgSrc}
-              alt={card.title}
-              style={{ maxWidth: "50%", height: "auto" }}
-            />
-            <Card.Body>
-              <Card.Title>{card.title}</Card.Title>
-              <Card.Text>{card.text}</Card.Text>
-              <Button
-                variant="primary"
-                onClick={() => handleReadMore(card.title)}
-              >
-                Read More
-              </Button>
-            </Card.Body>
-          </Card>
+          <Row className="align-items-center">
+            {idx % 2 === 0 ? (
+              <>
+                <Col md={6}>
+                  <Card.Img
+                    variant="top"
+                    src={card.imgSrc}
+                    alt={card.title}
+                    className="img-fluid"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </Col>
+                <Col md={6}>
+                  <Card.Body>
+                    <Card.Title style={{ color: "#32CD32" }}>
+                      {/* Grass green color */}
+                      {card.title}
+                    </Card.Title>
+                    <Card.Text>{card.text}</Card.Text>
+                    <Button
+                      variant="success"
+                      style={{
+                        backgroundColor: "#3cb371",
+                        borderColor: "#3cb371",
+                      }}
+                      onClick={() => handleReadMore(card.title)}
+                    >
+                      Read More
+                    </Button>
+                  </Card.Body>
+                </Col>
+              </>
+            ) : (
+              <>
+                <Col md={6} className="order-md-2">
+                  <Card.Img
+                    variant="top"
+                    src={card.imgSrc}
+                    alt={card.title}
+                    className="img-fluid"
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </Col>
+                <Col md={6} className="order-md-1">
+                  <Card.Body>
+                    <Card.Title style={{ color: "#32CD32" }}>
+                      {/* Grass green color */}
+                      {card.title}
+                    </Card.Title>
+                    <Card.Text>{card.text}</Card.Text>
+                    <Button
+                      variant="success"
+                      style={{
+                        backgroundColor: "#3cb371",
+                        borderColor: "#3cb371",
+                      }}
+                      onClick={() => handleReadMore(card.title)}
+                    >
+                      Read More
+                    </Button>
+                  </Card.Body>
+                </Col>
+              </>
+            )}
+          </Row>
         </Col>
       ))}
     </Row>
