@@ -1,23 +1,19 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 //import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import Logo from '../assets/Logo.png'; // Import the logo image
-import Button from 'react-bootstrap/esm/Button';
-import './styles/Navigation-Bar.css'
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Logo from "../assets/Logo.png"; // Import the logo image
+import Button from "react-bootstrap/esm/Button";
+import "./styles/Navigation-Bar.css";
 
 function NavigationBar() {
   return (
-    <div className='Navigation-Bar'>
+    <div className="Navigation-Bar">
       <Navbar expand="lg" className="bg-transparent mb-3 navbar-custom">
         <Container fluid>
           <Navbar.Brand href="/">
-            <img
-              src={Logo}
-              alt="Logo"
-              className='logo'
-            />
+            <img src={Logo} alt="Logo" className="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
           <Navbar.Offcanvas
@@ -30,11 +26,21 @@ function NavigationBar() {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="/" className='links'><Button variant="dark">Home</Button></Nav.Link>
-                <Nav.Link href="/services"><Button variant="dark">Services</Button></Nav.Link>
-                <Nav.Link href="/childcare"><Button variant="dark">Childcare</Button></Nav.Link>
-                <Nav.Link href="/forms"><Button variant="dark">Forms</Button></Nav.Link>
-                <Nav.Link href="/about"><Button variant="dark">About Us</Button></Nav.Link>
+                <Nav.Link href="/" className="links">
+                  <Button variant="dark">Home</Button>
+                </Nav.Link>
+                <Nav.Link href="/services">
+                  <Button variant="dark">Services</Button>
+                </Nav.Link>
+                <Nav.Link href="/childcare">
+                  <Button variant="dark">Childcare</Button>
+                </Nav.Link>
+                <Nav.Link href="/forms">
+                  <Button variant="dark">Forms</Button>
+                </Nav.Link>
+                <Nav.Link href="/about">
+                  <Button variant="dark">About Us</Button>
+                </Nav.Link>
                 {/* <NavDropdown title="Services" id="services-dropdown">
                   <NavDropdown.Item href="/Services">Service 1</NavDropdown.Item>
                   <NavDropdown.Item href="#service2">Service 2</NavDropdown.Item>

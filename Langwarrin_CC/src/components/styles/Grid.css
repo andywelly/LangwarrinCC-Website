@@ -1,0 +1,20 @@
+/* Grid.css */
+
+.card-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-title {
+    color: #32cd32;
+  }
+  
+  .card-button {
+    background-color: #3cb371;
+    border-color: #3cb371;
+  }
+  
+  .row-align-center {
+    display: flex;
+    align-items: center;
+  }

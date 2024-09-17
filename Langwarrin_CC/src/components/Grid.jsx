@@ -1,23 +1,90 @@
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
+
+import possumImg from "../assets/possum.png";
+import koalaImg from "../assets/koala.png";
+import childrenPlayingImg from "../assets/children_playing.png";
+import cartoonChildrenImg from "../assets/cartoon_children.png";
+import './styles/Grid.css'; 
 
 function Grid() {
+  const cardData = [
+    {
+      imgSrc: possumImg,
+      title: "Community Childcare - Possum Group",
+      text: "We provide engaging early learning experiences for children from 6 weeks to 4 years old.",
+    },
+    {
+      imgSrc: koalaImg,
+      title: "Community Childcare - Koala Group",
+      text: "Our 3+ year old Koala group delivers structured educational sessions through play-based activities.",
+    },
+    {
+      imgSrc: childrenPlayingImg,
+      title: "Outside School Hours Care",
+      text: "Staying late at work? We have before and after school care for school-aged children.",
+    },
+    {
+      imgSrc: cartoonChildrenImg,
+      title: "Children Activities",
+      text: "Take a look at our great children activities! Children's Drama Academy and Mini Maestros.",
+    },
+  ];
+
   return (
-    <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 4 }).map((_, idx) => (
+    <Row xs={1} md={1} className="g-4">
+      {cardData.map((card, idx) => (
         <Col key={idx}>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <Row className="row-align-center">
+            {idx % 2 === 0 ? (
+              <>
+                <Col md={6}>
+                  <Card.Img
+                    variant="top"
+                    src={card.imgSrc}
+                    alt={card.title}
+                    className="img-fluid card-img"
+                  />
+                </Col>
+                <Col md={6}>
+                  <Card.Body>
+                    <Card.Title className="card-title">
+                      {card.title}
+                    </Card.Title>
+                    <Card.Text>{card.text}</Card.Text>
+                    <Link to="/forms">
+                      <Button className="card-button">Read More</Button>
+                    </Link>
+                  </Card.Body>
+                </Col>
+              </>
+            ) : (
+              <>
+                <Col md={6} className="order-md-2">
+                  <Card.Img
+                    variant="top"
+                    src={card.imgSrc}
+                    alt={card.title}
+                    className="img-fluid card-img"
+                  />
+                </Col>
+                <Col md={6} className="order-md-1">
+                  <Card.Body>
+                    <Card.Title className="card-title">
+                      {card.title}
+                    </Card.Title>
+                    <Card.Text>{card.text}</Card.Text>
+                    <Link to="/forms">
+                      <Button className="card-button">Read More</Button>
+                    </Link>
+                  </Card.Body>
+                </Col>
+              </>
+            )}
+          </Row>
         </Col>
       ))}
     </Row>
