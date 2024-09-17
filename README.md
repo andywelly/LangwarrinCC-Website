@@ -5,12 +5,24 @@ This project is a web application developed as a part of IT Project COMP30022 at
 
 # Github pages
 
-# How to Run
-- git clone
-- Run the following lines of code:
-- cd LangwarrinCC
-- npm install
-- npm run dev
+# How to Run Locally
+Clone the repository:
+```
+git clone https://github.com/andywelly/LangwarrinCC-Website.git
+```
+Navigate to the project directory:
+```
+cd LangwarrinCC
+```
+Install Dependencies:
+```
+npm install
+```
+Run the development Server:
+```
+npm run dev
+```
+Open preferred browser and navigate to the link it will provide
 
 # Technologies Used
 - Frontend: HTML, CSS, JavaScript, React.js
