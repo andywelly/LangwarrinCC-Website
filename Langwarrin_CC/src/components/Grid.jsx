@@ -8,7 +8,7 @@ import possumImg from "../assets/possum.png";
 import koalaImg from "../assets/koala.png";
 import childrenPlayingImg from "../assets/children_playing.png";
 import cartoonChildrenImg from "../assets/cartoon_children.png";
-import './styles/Grid.css'; 
+import './styles/Grid.css'; // Import the updated CSS file
 
 function Grid() {
   const cardData = [
@@ -35,59 +35,61 @@ function Grid() {
   ];
 
   return (
-    <Row xs={1} md={1} className="g-4">
-      {cardData.map((card, idx) => (
-        <Col key={idx}>
-          <Row className="row-align-center">
-            {idx % 2 === 0 ? (
-              <>
-                <Col md={6}>
-                  <Card.Img
-                    variant="top"
-                    src={card.imgSrc}
-                    alt={card.title}
-                    className="img-fluid card-img"
-                  />
-                </Col>
-                <Col md={6}>
-                  <Card.Body>
-                    <Card.Title className="card-title">
-                      {card.title}
-                    </Card.Title>
-                    <Card.Text>{card.text}</Card.Text>
-                    <Link to="/forms">
-                      <Button className="card-button">Read More</Button>
-                    </Link>
-                  </Card.Body>
-                </Col>
-              </>
-            ) : (
-              <>
-                <Col md={6} className="order-md-2">
-                  <Card.Img
-                    variant="top"
-                    src={card.imgSrc}
-                    alt={card.title}
-                    className="img-fluid card-img"
-                  />
-                </Col>
-                <Col md={6} className="order-md-1">
-                  <Card.Body>
-                    <Card.Title className="card-title">
-                      {card.title}
-                    </Card.Title>
-                    <Card.Text>{card.text}</Card.Text>
-                    <Link to="/forms">
-                      <Button className="card-button">Read More</Button>
-                    </Link>
-                  </Card.Body>
-                </Col>
-              </>
-            )}
-          </Row>
-        </Col>
-      ))}
-    </Row>
+    <div className="grid-container">
+      <Row xs={1} md={1} className="g-4 row-align-center">
+        {cardData.map((card, idx) => (
+          <Col key={idx}>
+            <Row className="align-items-center justify-content-center">
+              {idx % 2 === 0 ? (
+                <>
+                  <Col md={6}>
+                    <Card.Img
+                      variant="top"
+                      src={card.imgSrc}
+                      alt={card.title}
+                      className="img-fluid card-img"
+                    />
+                  </Col>
+                  <Col md={6}>
+                    <Card.Body>
+                      <Card.Title className="card-title">
+                        {card.title}
+                      </Card.Title>
+                      <Card.Text>{card.text}</Card.Text>
+                      <Link to="/forms">
+                        <Button className="card-button">Read More</Button>
+                      </Link>
+                    </Card.Body>
+                  </Col>
+                </>
+              ) : (
+                <>
+                  <Col md={6} className="order-md-2">
+                    <Card.Img
+                      variant="top"
+                      src={card.imgSrc}
+                      alt={card.title}
+                      className="img-fluid card-img"
+                    />
+                  </Col>
+                  <Col md={6} className="order-md-1">
+                    <Card.Body>
+                      <Card.Title className="card-title">
+                        {card.title}
+                      </Card.Title>
+                      <Card.Text>{card.text}</Card.Text>
+                      <Link to="/forms">
+                        <Button className="card-button">Read More</Button>
+                      </Link>
+                    </Card.Body>
+                  </Col>
+                </>
+              )}
+            </Row>
+          </Col>
+        ))}
+      </Row>
+    </div>
   );
 }
 
