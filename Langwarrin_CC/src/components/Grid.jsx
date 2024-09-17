@@ -2,6 +2,7 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 import possumImg from "../assets/possum.png";
 import koalaImg from "../assets/koala.png";
@@ -28,7 +29,7 @@ function Grid() {
     {
       imgSrc: cartoonChildrenImg,
       title: "Children Activities",
-      text: "Take a look at our great children activities! Children's Drama Academy and Mini Maestros",
+      text: "Take a look at our great children activities! Children's Drama Academy and Mini Maestros.",
     },
   ];
 
@@ -51,20 +52,20 @@ function Grid() {
                 <Col md={6}>
                   <Card.Body>
                     <Card.Title style={{ color: "#32CD32" }}>
-                      {/* Grass green color */}
                       {card.title}
                     </Card.Title>
                     <Card.Text>{card.text}</Card.Text>
-                    <Button
-                      variant="success"
-                      style={{
-                        backgroundColor: "#3cb371",
-                        borderColor: "#3cb371",
-                      }}
-                      onClick={() => handleReadMore(card.title)}
-                    >
-                      Read More
-                    </Button>
+                    <Link to="/forms">
+                      <Button
+                        variant="success"
+                        style={{
+                          backgroundColor: "#3cb371",
+                          borderColor: "#3cb371",
+                        }}
+                      >
+                        Read More
+                      </Button>
+                    </Link>
                   </Card.Body>
                 </Col>
               </>
@@ -82,20 +83,20 @@ function Grid() {
                 <Col md={6} className="order-md-1">
                   <Card.Body>
                     <Card.Title style={{ color: "#32CD32" }}>
-                      {/* Grass green color */}
                       {card.title}
                     </Card.Title>
                     <Card.Text>{card.text}</Card.Text>
-                    <Button
-                      variant="success"
-                      style={{
-                        backgroundColor: "#3cb371",
-                        borderColor: "#3cb371",
-                      }}
-                      onClick={() => handleReadMore(card.title)}
-                    >
-                      Read More
-                    </Button>
+                    <Link to="/forms">
+                      <Button
+                        variant="success"
+                        style={{
+                          backgroundColor: "#3cb371",
+                          borderColor: "#3cb371",
+                        }}
+                      >
+                        Read More
+                      </Button>
+                    </Link>
                   </Card.Body>
                 </Col>
               </>
