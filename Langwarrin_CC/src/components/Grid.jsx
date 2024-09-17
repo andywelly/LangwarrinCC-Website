@@ -8,6 +8,7 @@ import possumImg from "../assets/possum.png";
 import koalaImg from "../assets/koala.png";
 import childrenPlayingImg from "../assets/children_playing.png";
 import cartoonChildrenImg from "../assets/cartoon_children.png";
+import './styles/Grid.css'; 
 
 function Grid() {
   const cardData = [
@@ -37,7 +38,7 @@ function Grid() {
     <Row xs={1} md={1} className="g-4">
       {cardData.map((card, idx) => (
         <Col key={idx}>
-          <Row className="align-items-center">
+          <Row className="row-align-center">
             {idx % 2 === 0 ? (
               <>
                 <Col md={6}>
@@ -45,26 +46,17 @@ function Grid() {
                     variant="top"
                     src={card.imgSrc}
                     alt={card.title}
-                    className="img-fluid"
-                    style={{ width: "100%", height: "auto" }}
+                    className="img-fluid card-img"
                   />
                 </Col>
                 <Col md={6}>
                   <Card.Body>
-                    <Card.Title style={{ color: "#32CD32" }}>
+                    <Card.Title className="card-title">
                       {card.title}
                     </Card.Title>
                     <Card.Text>{card.text}</Card.Text>
                     <Link to="/forms">
-                      <Button
-                        variant="success"
-                        style={{
-                          backgroundColor: "#3cb371",
-                          borderColor: "#3cb371",
-                        }}
-                      >
-                        Read More
-                      </Button>
+                      <Button className="card-button">Read More</Button>
                     </Link>
                   </Card.Body>
                 </Col>
@@ -76,26 +68,17 @@ function Grid() {
                     variant="top"
                     src={card.imgSrc}
                     alt={card.title}
-                    className="img-fluid"
-                    style={{ width: "100%", height: "auto" }}
+                    className="img-fluid card-img"
                   />
                 </Col>
                 <Col md={6} className="order-md-1">
                   <Card.Body>
-                    <Card.Title style={{ color: "#32CD32" }}>
+                    <Card.Title className="card-title">
                       {card.title}
                     </Card.Title>
                     <Card.Text>{card.text}</Card.Text>
                     <Link to="/forms">
-                      <Button
-                        variant="success"
-                        style={{
-                          backgroundColor: "#3cb371",
-                          borderColor: "#3cb371",
-                        }}
-                      >
-                        Read More
-                      </Button>
+                      <Button className="card-button">Read More</Button>
                     </Link>
                   </Card.Body>
                 </Col>
