@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://andywelly.github.io/LangwarrinCC-Website/",
+  "homepage": "https://andywelly.github.io/LangwarrinCC-Website/Langwarrin_CC",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
