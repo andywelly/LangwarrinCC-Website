@@ -1,18 +1,31 @@
-//import React from "react";
+import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CoverImage from "../components/CoverImage";
-import NavigationBar from "../components/Navigation_Bar";
+import FormsGrid from "../components/FormsGrid";
 
 
-function Forms() {
+
+function Form() {
     return (
-        <div>
-            <NavigationBar></NavigationBar>
-            <CoverImage/>
-            <h1>Forms</h1>
-            <Footer/>
-        </div>
+         
+    <div>
+        <Header/>
+        <p/><p/><p/>
+        <article><center>Our Forms</center></article>
+        <div className="text"><center> 
+            Connect with us and get in touch by using our forms.
+            
+            <p>Click on the icon to view each form<br/><br/><br/></p>
+        </center></div>
+        
+        
+        <FormsGrid Summary/>
+        
+        
+        <Footer/>
+            
+    </div>
+       
     );
 }
 
-export default Forms;
+export default Form;

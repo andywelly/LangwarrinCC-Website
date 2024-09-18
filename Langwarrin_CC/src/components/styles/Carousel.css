@@ -1,0 +1,45 @@
+.carousel-container {
+    width: 75%;
+    margin: 20px auto; /* Centers the carousel and adds margin */
+    padding: 10px; /* Adds padding around the carousel */
+    box-sizing: border-box;
+  }
+  
+  .carousel-image {
+    display: block; /* Equivalent to Bootstrap's d-block */
+    width: 100%; /* Equivalent to Bootstrap's w-100 */
+    height: 400px; /* Fixed height to ensure consistency */
+    object-fit: cover; /* Crops the images to fit */
+    border-radius: 10px;
+  }
+  
+  .carousel-caption-text {
+    color: #ffffff; /* Changes text color to white for readability */
+    background-color: rgba(0, 0, 0, 0.6); /* Adds a semi-transparent background for better contrast */
+    padding: 10px; /* Adds padding around the text */
+    border-radius: 5px; /* Rounds the corners of the text background */
+    text-align: center; /* Centers text within the caption */
+  }
+  
+  .carousel-container {
+    position: relative;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    filter: invert(1); /* Inverts color to ensure arrows are visible on various backgrounds */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Add a background color to make the arrows stand out */
+    border-radius: 50%; /* Round the background */
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+  }
+  
+  .carousel-control-prev-icon::before,
+  .carousel-control-next-icon::before {
+    font-size: 24px; /* Adjust size for better readability */
+  }
+  
