@@ -8,7 +8,7 @@ import Community from '../assets/icons8-community-100.png';
 import Hobbies from '../assets/icons8-drawing-100.png';
 
 
-import ServicesButton from "../components/ServicesButton";
+import ServicesButton from "./ServicesButton";
 
 const EnrolSummary = "Steps on how to enrol with information on fee and cancellation policy.";
 const ComputerSummary = "Workshop on understanding different types of computer devices for beginners.";
