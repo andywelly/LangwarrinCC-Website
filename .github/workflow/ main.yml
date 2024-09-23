@@ -1,4 +1,4 @@
-name: Deploy
+name: strapi-deploy
 
 on:
   push:
