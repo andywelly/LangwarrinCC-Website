@@ -2,6 +2,7 @@ import "../components/styles/Button.css";
 import Nav from 'react-bootstrap/Nav';
 
 const ServicesButton = (props) => {
+    //each Logo and Link will be different based on which Service they are part of
     const Logo = props.Logo;
     const Link = props.Link;
     return ( 

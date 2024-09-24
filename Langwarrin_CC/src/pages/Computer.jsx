@@ -25,7 +25,7 @@ function Computer() {
                             </Row>
 
                             <Row>
-                                <div className="text" style={{
+                                <div className="text" style={{ 
                                     fontSize: '17px',
                                     textAlign: 'left',
                                 }}>
@@ -43,7 +43,7 @@ function Computer() {
 
                             <Row>
                                 <Col>
-                                    <div className = 'text'style={{
+                                    <div className = 'text'style={{ /*this is the style of the click to enrol button*/
                                         color: "black",
                                         fontSize: '17px',
                                         fontWeight: 'bold',
