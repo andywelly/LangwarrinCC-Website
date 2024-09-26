@@ -3,17 +3,17 @@
     border: none;
     color: white;
     padding: 20px;
-    text-align: center;
+    text-align: center; /*to make sure that the image/logo inside of the button is in the middle*/
     text-decoration: none;
-    display: inline-block;
+    display: inline-block; /*to allow other element to sit on the left and right*/
     font-size: 16px;
     margin: 4px 2px;
-    border-radius: 50%;
+    border-radius: 50%; /*so that the button is circular in shape*/
     height: 100px;
     width: 100px;
   }
 
-  .services-logo{
+  .services-logo{ /*particular size for the logo that is inside of the button*/
     height: 50px;
     width: 50px
   }

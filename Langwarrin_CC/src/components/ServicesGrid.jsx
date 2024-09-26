@@ -10,6 +10,8 @@ import Hobbies from '../assets/icons8-drawing-100.png';
 
 import ServicesButton from "../components/ServicesButton";
 
+/*These are temporary texts that will be displaced in the website. In the final version, the texts and other
+data will be extracted directly from Strapi*/
 const EnrolSummary = "Steps on how to enrol with information on fee and cancellation policy.";
 const ComputerSummary = "Workshop on understanding different types of computer devices for beginners.";
 const LiteracySummary = "Enhance your skills with tailored programs in reading, writing, leadership, skills, and more.";
@@ -17,6 +19,7 @@ const ChildcareSummary = "Different fun activities and classes tailored for diff
 const CommunitySummary = "Connect with community groups for shared interests by joining our vibrant offerings.";
 const HobbiesSummary = "Join workshops and lasses to explore various arts and crafts to discover your creative side.";
 
+//These are the links for each specific page destination
 const ComputerLink = "/computer";
 const EnrolLink = "/enrol";
 const LiteracyLink = "/literacy";
@@ -25,10 +28,12 @@ const CommunityLink = "/community";
 const HobbiesLink = "/hobbies";
 
 const ServicesGrid = (prop) => {
+    
     const Summary = prop.Summary;
     return (  
         <Container>
-            <Row className="justify-content-md-center">
+            {/*each row should only be filled with maximum of 3 services, following the high-fidelity design*/}
+            <Row className="justify-content-md-center"> 
                 <Col sm={3}> 
                     <Container>
                         <Row><ServicesButton Logo={Enrol} Link ={EnrolLink}/> </Row>

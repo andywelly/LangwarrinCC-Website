@@ -10,6 +10,8 @@ import AnnualReport from '../assets/icons8-report-100.png';
 
 import ServicesButton from "./ServicesButton";
 
+/*These are temporary texts that will be displaced in the website. In the final version, the texts and other
+data will be extracted directly from Strapi*/
 const EnrolSummary = "Enrol any new students or apply to new courses.";
 const FeedbackSummary = "Give us any feedback and complains so we can improve our services.";
 const EmploymentSummary = "Take a look at our employment opportunitis.";

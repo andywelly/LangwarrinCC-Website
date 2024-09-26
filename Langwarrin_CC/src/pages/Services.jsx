@@ -7,6 +7,8 @@ import Brochure from '../assets/icons8-brochure-100.png';
 
 const BrochureLink =  '/'
 
+//This is the Service Page that show all of the available services in one page
+//Each service is displayed using unique and intuitive logos with short summaries
 
 function Services() {
     return (
