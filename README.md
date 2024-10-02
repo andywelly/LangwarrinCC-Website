@@ -3,8 +3,11 @@
 # Overview
 This project is a web application developed as a part of IT Project COMP30022 at the University of Melbourne. This full-stack web application is an online platform which improves upon the original Langwarrin Community Centre Website. The project aims to create an accessible and user-friendly platform for community members.
 
-# Github pages
-[Langwarrin Community Centre Website](https://andywelly.github.io/LangwarrinCC-Deploy/)
+# Website
+[Langwarrin Community Centre Website](https://langwarrin-cc-website-3efcfff29c9c.herokuapp.com/)
+
+# Strapi
+[Strapi Admin Panel](https://langwarrin-cc-9afcbaa709d4.herokuapp.com/admin)
 
 # How to Run Locally
 Clone the repository:
