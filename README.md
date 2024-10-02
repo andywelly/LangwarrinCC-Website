@@ -31,7 +31,7 @@ Open preferred browser and navigate to the link it will provide
 # Technologies Used
 - Frontend: HTML, CSS, JavaScript, React.js
 - Backend: Strapi
-- Database: MongoDB
+- Database: PostgreSQL (Hosted on Render
 - Deployment: Heroku
 
 # Project Members and Roles
