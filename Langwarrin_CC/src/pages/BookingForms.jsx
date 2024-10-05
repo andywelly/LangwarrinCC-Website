@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import FillForm from "../components/BookingFillForm";
 
-const FormsEmail = () => {
+const BookingForms = () => {
     return (  
     <div>
         <Header/>
@@ -11,4 +11,4 @@ const FormsEmail = () => {
     </div>);
 }
  
-export default FormsEmail;
+export default BookingForms;

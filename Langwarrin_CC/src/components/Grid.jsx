@@ -9,8 +9,10 @@ import koalaImg from "../assets/koala.png";
 import childrenPlayingImg from "../assets/children_playing.png";
 import cartoonChildrenImg from "../assets/cartoon_children.png";
 import './styles/Grid.css'; // Import the updated CSS file
+import ChildcareForms from "../pages/ChildcareForms";
 
-const FormsEmailLink = "/formsEmail";
+const BookingFormsLink = "/bookingForms";
+const ChildcareFormsLink = "/childcareForms";
 
 function Grid() {
   const cardData = [
@@ -58,7 +60,7 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to={FormsEmailLink}>
+                      <Link to={BookingFormsLink}>
                         <Button className="card-button">Read More</Button>
                       </Link>
                     </Card.Body>
@@ -80,7 +82,7 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to="/forms">
+                      <Link to={ChildcareFormsLink}>
                         <Button className="card-button">Read More</Button>
                       </Link>
                     </Card.Body>
