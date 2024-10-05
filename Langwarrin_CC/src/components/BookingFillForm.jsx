@@ -8,7 +8,7 @@ import "./styles/FillForm.css";
 
 // npm i @emailjs/browser
 
-const FillForm = () => {
+const BookingFillForm = () => {
 
   //these are needed because we want to be able to sent data from 
   //dropdown menu of enquire type
@@ -34,6 +34,15 @@ const FillForm = () => {
       );
   };
 
+  const dateTimeLocalNow = new Date(
+    new Date().getTime() - new Date().
+    getTimezoneOffset() * 60_000  
+  )
+    .toISOString()
+    .slice(0,16);
+    
+  
+
   return (
       <div className="create">
         <h2> Booking Room Form </h2>
@@ -53,22 +62,27 @@ const FillForm = () => {
 
           <label> Room Type </label>
             <Controller
-              name="room type"
+              name="room_type"
               control={control}
               render={({ field }) => (
-                <select {...field}>
-                  <option value="Hall">Hall</option>
-                  <option value="Craig Room">Craig Room (capacity : 80)</option>
+                <select {...field} defaultValue="" required> {/*this is so that user need to select a room type*/}
+                  <option hidden value="">Select a Room</option>
+                  <option value="Hall">Hall (capacity : 80)</option>
+                  <option value="Craig Room">Craig Room (capacity : 20)</option>
                   <option value="Hempel Room">Hempel Room (capacity: 10)</option>
-                  <option value="Craig Room">Hampton Room (capaciy: 25)</option>
-                  <option value="Craig Room">Craig Room</option>
-                  <option value="Craig Room">Craig Room</option>
-                  <option value="Craig Room">Craig Room</option>
+                  <option value="Hampton Room">Hampton Room (capaciy: 25)</option>
+                  <option value="Back Spare Office">Back Spare Office (capaciy: 6)</option>
+                  <option value="Children's Room and Playground">Children's Room and Playground (capaciy: 30)</option>
                 </select>
               )   }
-        >
-
-        </Controller>
+        >   </Controller>
+        
+        <label>Number of Guests</label>
+            <input 
+              type="text" pattern="[0-9]*" 
+              {...register("guest_number")}
+              required
+            />
         {/*
           <select name="type" >
             <option value="Room Booking">Room Booking</option>
@@ -76,7 +90,12 @@ const FillForm = () => {
           </select>
           */
         }
-
+        <label>Date of Booking</label>
+            <input 
+              type="datetime-local"
+              min = {dateTimeLocalNow} /*so that the user can't select previous date*/
+              {...register("date")}
+            />
 
           <label>Message</label>
           <textarea {...register("message")} />
@@ -86,4 +105,4 @@ const FillForm = () => {
   );
 };
 
-export default FillForm;
+export default BookingFillForm;

@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import FillForm from "../components/FillForm";
+import FillForm from "../components/BookingFillForm";
 
 const FormsEmail = () => {
     return (  
