@@ -10,6 +10,8 @@ import childrenPlayingImg from "../assets/children_playing.png";
 import cartoonChildrenImg from "../assets/cartoon_children.png";
 import './styles/Grid.css'; // Import the updated CSS file
 
+const FormsEmailLink = "/formsEmail";
+
 function Grid() {
   const cardData = [
     {
@@ -56,7 +58,7 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to="/forms">
+                      <Link to={FormsEmailLink}>
                         <Button className="card-button">Read More</Button>
                       </Link>
                     </Card.Body>

@@ -10,6 +10,7 @@ import Enrol from './pages/Enrol.jsx'
 import Literacy from './pages/Literacy.jsx'
 import Community from './pages/Community.jsx'
 import Hobbies from './pages/Hobbies.jsx'
+import FormsEmail from './pages/FormsEmail.jsx'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   { 
     path: "hobbies",
     element: <Hobbies/>
+  },
+  {
+    path: "formsEmail",
+    element: <FormsEmail/>
   },
 
 ]);
