@@ -28,3 +28,11 @@
   align-items: center;
   justify-content: center; /* This centers the content horizontally */
 }
+
+.main-category {
+  margin-bottom: 7rem; /* So that each main category is clearly seperated */
+}
+
+.courseCard {
+  margin-bottom: 4rem; /* So that each course card does not overlap each other */
+}
