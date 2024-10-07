@@ -12,6 +12,7 @@ import Community from './pages/Community.jsx'
 import Hobbies from './pages/Hobbies.jsx'
 import BookingForms from './pages/BookingForms.jsx'
 import ChildcareForms from './pages/ChildcareForms.jsx'
+import ServiceForms from './pages/ServiceForms.jsx'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
   {
     path: "childcareForms",
     element: <ChildcareForms/>
+  },
+  {
+    path: "serviceForms",
+    element: <ServiceForms/>
   },
 
 ]);

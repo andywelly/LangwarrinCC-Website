@@ -10,7 +10,7 @@ import techLesson from '../assets/TechLesson.jpg';
 import ipadWorkshop from '../assets/ipadWorkshop.png';
 import computerClass from '../assets/computerClass.png';
 
-const FormLink = "/bookingForms";
+const FormLink = "/serviceForms";
 
 function Computer() {
     const cardData = [
