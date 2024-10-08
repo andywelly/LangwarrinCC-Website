@@ -1,5 +1,6 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+
 export interface HomeCardCardText extends Schema.Component {
   collectionName: 'components_home_card_card_texts';
   info: {
@@ -39,11 +40,5 @@ export interface CarouselCarouselItem extends Schema.Component {
 }
 
 declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
-      'home-card.card-text': HomeCardCardText;
-      'header.cover-image': HeaderCoverImage;
-      'carousel.carousel-item': CarouselCarouselItem;
-    }
-  }
+  export module Shared {}
 }
