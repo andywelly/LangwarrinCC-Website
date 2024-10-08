@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { API_URL, BASE_URL} from "../constants";
 import Carousel from 'react-bootstrap/Carousel';
-import Image1 from '../assets/Thrive.png';
-import Image2 from '../assets/Exercise.jpg';
-import Image3 from '../assets/Stillness.png';
-import Image4 from '../assets/Seniors.png'
 import './styles/Carousel.css';
 
 function HomeCarousel() {
-  const [carouselData, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,14 +22,14 @@ function HomeCarousel() {
     fetchData();
   }, []);
 
-  if (!carouselData) {
+  if (!data) {
     return <div></div>; // Show a loading message while data is being fetched
   }
 
   return (
     <div className="carousel-container">
       <Carousel>
-        {carouselData.map((item, index) => (
+        {data.map((item, index) => (
           <Carousel.Item key={item.id}>
             <img
               className="carousel-image"

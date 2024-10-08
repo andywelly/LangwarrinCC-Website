@@ -5,7 +5,7 @@ import "./styles/CoverImage.css"; // Make sure to import the CSS file
 import { API_URL, BASE_URL} from "../constants";
 
 function CoverImage() {
-  const [headerData, setData] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,18 +22,18 @@ function CoverImage() {
     fetchData();
   }, []);
 
-  if (!headerData) {
+  if (!data) {
     return <div></div>; // Show a loading message while data is being fetched
   }
 
   return (
     <div className="cover-image-container">
       <Image 
-        src={`${BASE_URL}${headerData.Image.data.attributes.url}`} 
+        src={`${BASE_URL}${data.Image.data.attributes.url}`} 
         fluid 
         className="cover-image" 
       />
-      <div className="cover-text">{headerData.ImageText}</div>
+      <div className="cover-text">{data.ImageText}</div>
     </div>
   );
 }
