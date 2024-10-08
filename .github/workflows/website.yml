@@ -1,9 +1,10 @@
-name: strapi-deploy
+name: website-deploy
 
 on:
   push:
     branches:
       - main
+    paths: 'Langwarrin_CC/**'
   workflow_dispatch:
 
 jobs:
@@ -14,6 +15,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.13.15 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "langwarrin-cc" #Must be unique in Heroku
+          heroku_app_name: "langwarrin-cc-website" #Must be unique in Heroku
           heroku_email: "bdtran@student.unimelb.edu.au"
-          appdir: "backend/langwarrin" 
+          appdir: "Langwarrin_CC" 
