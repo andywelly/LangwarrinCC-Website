@@ -11,6 +11,7 @@
     "start": "serve -s dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
