@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_carousel_carousel_items",
+  "info": {
+    "displayName": "CarouselItem",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Caption": {
+      "type": "string"
+    }
+  }
+}

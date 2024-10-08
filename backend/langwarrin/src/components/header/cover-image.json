@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_header_cover_images",
+  "info": {
+    "displayName": "Cover Image",
+    "icon": "collapse"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "ImageText": {
+      "type": "string"
+    }
+  }
+}
