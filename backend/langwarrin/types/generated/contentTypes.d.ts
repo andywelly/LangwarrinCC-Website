@@ -873,12 +873,15 @@ export interface ApiHomeHome extends Schema.SingleType {
     singularName: 'home';
     pluralName: 'homes';
     displayName: 'Home';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     CarouselImage: Attribute.Component<'carousel.carousel-item', true>;
+    Header: Attribute.Component<'header.cover-image'>;
+    HomeCard: Attribute.Component<'home-card.card-text'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

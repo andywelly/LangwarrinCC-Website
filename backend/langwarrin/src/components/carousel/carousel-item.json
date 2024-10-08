@@ -2,22 +2,24 @@
   "collectionName": "components_carousel_carousel_items",
   "info": {
     "displayName": "CarouselItem",
-    "icon": "grid"
+    "icon": "grid",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Caption": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

@@ -28,10 +28,11 @@ export interface CarouselCarouselItem extends Schema.Component {
   info: {
     displayName: 'CarouselItem';
     icon: 'grid';
+    description: '';
   };
   attributes: {
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Caption: Attribute.String;
+    Caption: Attribute.Text;
   };
 }
 
