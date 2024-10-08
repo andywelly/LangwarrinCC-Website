@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import './styles/Footer.css';
+import { API_URL } from "../constants";
 
 function Footer() {
     const [footerData, setFooterData] = useState(null);
@@ -10,10 +11,10 @@ function Footer() {
         // Fetch data from Strapi
         const fetchFooterData = async () => {
             try {
-                const response = await axios.get('http://localhost:1337/api/footer', {
-                    headers: {
-                        Authorization: `7b9a7daf5614c1997ba9f7ace6a94295989d7665d78f705d09da1b8144dff2390c76472539323925f6a911d916d4bd26a13ef3d0b0d8228c36d8a2f17be63b2531ed29f8b16cc8208b12657ced47ea68d1f8151395bd407da481b3c9d94d7763b255e7a084b19066442f4a9fe2c1dee762dd571e7559e34c3b8f333421309db9`, // Include your token if necessary
-                    },
+                const response = await axios.get(`${API_URL}/footer`, {
+//                    headers: {
+//                        Authorization: `7b9a7daf5614c1997ba9f7ace6a94295989d7665d78f705d09da1b8144dff2390c76472539323925f6a911d916d4bd26a13ef3d0b0d8228c36d8a2f17be63b2531ed29f8b16cc8208b12657ced47ea68d1f8151395bd407da481b3c9d94d7763b255e7a084b19066442f4a9fe2c1dee762dd571e7559e34c3b8f333421309db9`, // Include your token if necessary
+//                    },
                 });
                 console.log(response.data); // Log the whole response
     
