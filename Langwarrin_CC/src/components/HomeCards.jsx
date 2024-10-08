@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Nav from 'react-bootstrap/Nav';
-import CardImage from '../assets/Building.jpg';
+import CardImage from '../assets/Facebook.png';
 import Button from 'react-bootstrap/Button';
 import './styles/HomeCards.css';
 
@@ -25,7 +25,9 @@ function HomeCards() {
           </Card.Footer>
         </Card>
         <Card className='card-image'>
-          <Card.Img variant="top" src={CardImage} />
+          <Nav.Link href="https://www.facebook.com/LangwarrinCommunityCentreInc/?ref=embed_page" className='image-link'>
+            <Card.Img variant="top" src={CardImage} />
+          </Nav.Link>
         </Card>
       </CardGroup>
     </div>
