@@ -31,7 +31,7 @@ function Footer() {
 
     // Check if footerData is null and render loading message
     if (!footerData) {
-        return <div>Loading footer...</div>; // Show loading message until data is fetched
+        return <div></div>; // Show loading message until data is fetched
     }
 
     return (
