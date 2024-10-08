@@ -362,125 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiClassClass extends Schema.CollectionType {
-  collectionName: 'classes';
-  info: {
-    singularName: 'class';
-    pluralName: 'classes';
-    displayName: 'Class';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    Description: Attribute.Text;
-    ContactEmail: Attribute.Email;
-    ContactNumber: Attribute.String;
-    SignUpFee: Attribute.Decimal;
-    ConcessionFee: Attribute.Decimal;
-    SpecialFee: Attribute.String;
-    StartDate: Attribute.Date;
-    session: Attribute.Relation<
-      'api::class.class',
-      'oneToMany',
-      'api::session.session'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::class.class',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::class.class',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRoomRoom extends Schema.CollectionType {
-  collectionName: 'rooms';
-  info: {
-    singularName: 'room';
-    pluralName: 'rooms';
-    displayName: 'Room';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    Capacity: Attribute.Integer;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    PermHireFee: Attribute.String;
-    CommHireFee: Attribute.String;
-    Notes: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSessionSession extends Schema.CollectionType {
-  collectionName: 'sessions';
-  info: {
-    singularName: 'session';
-    pluralName: 'sessions';
-    displayName: 'Session';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Date: Attribute.Date;
-    StartTime: Attribute.Time;
-    EndTime: Attribute.Time;
-    DayOfWeek: Attribute.Enumeration<
-      [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday'
-      ]
-    >;
-    Recurring: Attribute.Boolean;
-    class: Attribute.Relation<
-      'api::session.session',
-      'manyToOne',
-      'api::class.class'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::session.session',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::session.session',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -907,6 +788,187 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiClassClass extends Schema.CollectionType {
+  collectionName: 'classes';
+  info: {
+    singularName: 'class';
+    pluralName: 'classes';
+    displayName: 'Class';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Description: Attribute.Text;
+    ContactEmail: Attribute.Email;
+    ContactNumber: Attribute.String;
+    SignUpFee: Attribute.Decimal;
+    ConcessionFee: Attribute.Decimal;
+    SpecialFee: Attribute.String;
+    StartDate: Attribute.Date;
+    session: Attribute.Relation<
+      'api::class.class',
+      'oneToMany',
+      'api::session.session'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::class.class',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::class.class',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    adressLine1: Attribute.String;
+    adressLine2: Attribute.String;
+    phoneNumber: Attribute.String;
+    email: Attribute.Email;
+    operationalHoursTitle: Attribute.String;
+    operationalDays: Attribute.String;
+    operationalHours: Attribute.String;
+    organisationName: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CarouselImage: Attribute.Component<'carousel.carousel-item', true>;
+    Header: Attribute.Component<'header.cover-image'>;
+    HomeCard: Attribute.Component<'home-card.card-text'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRoomRoom extends Schema.CollectionType {
+  collectionName: 'rooms';
+  info: {
+    singularName: 'room';
+    pluralName: 'rooms';
+    displayName: 'Room';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Capacity: Attribute.Integer;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    PermHireFee: Attribute.String;
+    CommHireFee: Attribute.String;
+    Notes: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSessionSession extends Schema.CollectionType {
+  collectionName: 'sessions';
+  info: {
+    singularName: 'session';
+    pluralName: 'sessions';
+    displayName: 'Session';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Date: Attribute.Date;
+    StartTime: Attribute.Time;
+    EndTime: Attribute.Time;
+    DayOfWeek: Attribute.Enumeration<
+      [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday'
+      ]
+    >;
+    Recurring: Attribute.Boolean;
+    class: Attribute.Relation<
+      'api::session.session',
+      'manyToOne',
+      'api::class.class'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::session.session',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::session.session',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -917,9 +979,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::class.class': ApiClassClass;
-      'api::room.room': ApiRoomRoom;
-      'api::session.session': ApiSessionSession;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -928,6 +987,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::class.class': ApiClassClass;
+      'api::footer.footer': ApiFooterFooter;
+      'api::home.home': ApiHomeHome;
+      'api::room.room': ApiRoomRoom;
+      'api::session.session': ApiSessionSession;
     }
   }
 }
