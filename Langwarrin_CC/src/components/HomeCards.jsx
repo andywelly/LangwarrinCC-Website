@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import './styles/HomeCards.css';
 
 function HomeCards() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +47,7 @@ function HomeCards() {
           </Card.Footer>
         </Card>
         <Card className='card-image'>
-          <Card.Img variant="top" src={CardImage} />
+          <Card.Img variant="top" src={`${BASE_URL}${data.Image.data.attributes.url}`} />
         </Card>
       </CardGroup>
     </div>
