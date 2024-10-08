@@ -5,9 +5,11 @@ export interface HomeCardCardText extends Schema.Component {
   info: {
     displayName: 'Card Text';
     icon: 'bold';
+    description: '';
   };
   attributes: {
     Description: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
