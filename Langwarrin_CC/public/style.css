@@ -72,3 +72,7 @@ footer p {
   height: auto;      /* Maintains the aspect ratio */
   object-fit: cover; /* Ensures the image covers the area without stretching */
 }
+
+.courseCard {
+  margin-bottom: 4rem; /* So that each course card does not overlap each other */
+}

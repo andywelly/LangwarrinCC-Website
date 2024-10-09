@@ -10,7 +10,13 @@ import Enrol from './pages/Enrol.jsx'
 import Literacy from './pages/Literacy.jsx'
 import Community from './pages/Community.jsx'
 import Hobbies from './pages/Hobbies.jsx'
+<<<<<<< HEAD
 import ServicesV2 from './pages/ServicesV2.jsx'
+=======
+import BookingForms from './pages/BookingForms.jsx'
+import ChildcareForms from './pages/ChildcareForms.jsx'
+import ServiceForms from './pages/ServiceForms.jsx'
+>>>>>>> main
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -59,6 +65,18 @@ const router = createBrowserRouter([
   { 
     path: "hobbies",
     element: <Hobbies/>
+  },
+  {
+    path: "bookingForms",
+    element: <BookingForms/>
+  },
+  {
+    path: "childcareForms",
+    element: <ChildcareForms/>
+  },
+  {
+    path: "serviceForms",
+    element: <ServiceForms/>
   },
 
 
