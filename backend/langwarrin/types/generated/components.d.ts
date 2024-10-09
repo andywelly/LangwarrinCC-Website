@@ -1,6 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-
 export interface HomeCardCardText extends Schema.Component {
   collectionName: 'components_home_card_card_texts';
   info: {
@@ -26,6 +25,21 @@ export interface HeaderCoverImage extends Schema.Component {
   };
 }
 
+export interface GridGridItem extends Schema.Component {
+  collectionName: 'components_grid_grid_items';
+  info: {
+    displayName: 'GridItem';
+    icon: 'apps';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Link: Attribute.String;
+    Title: Attribute.String;
+    Text: Attribute.Text;
+  };
+}
+
 export interface CarouselCarouselItem extends Schema.Component {
   collectionName: 'components_carousel_carousel_items';
   info: {
@@ -39,6 +53,28 @@ export interface CarouselCarouselItem extends Schema.Component {
   };
 }
 
+export interface CardsCardText extends Schema.Component {
+  collectionName: 'components_cards_card_texts';
+  info: {
+    displayName: 'CardText';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description1: Attribute.Text;
+    Description2: Attribute.Text;
+  };
+}
+
 declare module '@strapi/types' {
-  export module Shared {}
+  export module Shared {
+    export interface Components {
+      'home-card.card-text': HomeCardCardText;
+      'header.cover-image': HeaderCoverImage;
+      'grid.grid-item': GridGridItem;
+      'carousel.carousel-item': CarouselCarouselItem;
+      'cards.card-text': CardsCardText;
+    }
+  }
 }

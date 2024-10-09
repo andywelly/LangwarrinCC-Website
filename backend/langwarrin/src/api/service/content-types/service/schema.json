@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading1": {
+      "type": "string"
+    },
+    "Text1": {
+      "type": "text"
+    },
+    "Text2": {
+      "type": "text"
+    },
+    "Service": {
+      "type": "component",
+      "repeatable": true,
+      "component": "grid.grid-item"
+    },
+    "Heading2": {
+      "type": "string"
+    },
+    "Text3": {
+      "type": "text"
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "File": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Text4": {
+      "type": "text"
+    }
+  }
+}

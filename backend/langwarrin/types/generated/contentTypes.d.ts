@@ -788,44 +788,159 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiClassClass extends Schema.CollectionType {
-  collectionName: 'classes';
+export interface ApiAboutAbout extends Schema.SingleType {
+  collectionName: 'abouts';
   info: {
-    singularName: 'class';
-    pluralName: 'classes';
-    displayName: 'Class';
+    singularName: 'about';
+    pluralName: 'abouts';
+    displayName: 'About';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String;
-    Description: Attribute.Text;
-    ContactEmail: Attribute.Email;
-    ContactNumber: Attribute.String;
-    SignUpFee: Attribute.Decimal;
-    ConcessionFee: Attribute.Decimal;
-    SpecialFee: Attribute.String;
-    StartDate: Attribute.Date;
-    session: Attribute.Relation<
-      'api::class.class',
-      'oneToMany',
-      'api::session.session'
-    >;
+    Title: Attribute.String;
+    Sections: Attribute.Component<'cards.card-text', true>;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::class.class',
+      'api::about.about',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::class.class',
+      'api::about.about',
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiChildcareChildcare extends Schema.SingleType {
+  collectionName: 'childcares';
+  info: {
+    singularName: 'childcare';
+    pluralName: 'childcares';
+    displayName: 'Childcare';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Card: Attribute.Component<'grid.grid-item', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::childcare.childcare',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::childcare.childcare',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCourseCourse extends Schema.CollectionType {
+  collectionName: 'courses';
+  info: {
+    singularName: 'course';
+    pluralName: 'courses';
+    displayName: 'Course';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    RoomName: Attribute.String;
+    Capacity: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::course.course',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    adressLine1: Attribute.String;
+    adressLine2: Attribute.String;
+    phoneNumber: Attribute.String;
+    email: Attribute.Email;
+    operationalHoursTitle: Attribute.String;
+    operationalDays: Attribute.String;
+    operationalHours: Attribute.String;
+    organisationName: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CarouselImage: Attribute.Component<'carousel.carousel-item', true>;
+    Header: Attribute.Component<'header.cover-image'>;
+    HomeCard: Attribute.Component<'home-card.card-text'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -858,48 +973,38 @@ export interface ApiRoomRoom extends Schema.CollectionType {
   };
 }
 
-export interface ApiSessionSession extends Schema.CollectionType {
-  collectionName: 'sessions';
+export interface ApiServiceService extends Schema.SingleType {
+  collectionName: 'services';
   info: {
-    singularName: 'session';
-    pluralName: 'sessions';
-    displayName: 'Session';
+    singularName: 'service';
+    pluralName: 'services';
+    displayName: 'Service';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Date: Attribute.Date;
-    StartTime: Attribute.Time;
-    EndTime: Attribute.Time;
-    DayOfWeek: Attribute.Enumeration<
-      [
-        'Monday',
-        'Tuesday',
-        'Wednesday',
-        'Thursday',
-        'Friday',
-        'Saturday',
-        'Sunday'
-      ]
-    >;
-    Recurring: Attribute.Boolean;
-    class: Attribute.Relation<
-      'api::session.session',
-      'manyToOne',
-      'api::class.class'
-    >;
+    Heading1: Attribute.String;
+    Text1: Attribute.Text;
+    Text2: Attribute.Text;
+    Service: Attribute.Component<'grid.grid-item', true>;
+    Heading2: Attribute.String;
+    Text3: Attribute.Text;
+    Icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    File: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Text4: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::session.session',
+      'api::service.service',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::session.session',
+      'api::service.service',
       'oneToOne',
       'admin::user'
     > &
@@ -925,9 +1030,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::class.class': ApiClassClass;
+      'api::about.about': ApiAboutAbout;
+      'api::childcare.childcare': ApiChildcareChildcare;
+      'api::course.course': ApiCourseCourse;
+      'api::footer.footer': ApiFooterFooter;
+      'api::home.home': ApiHomeHome;
       'api::room.room': ApiRoomRoom;
-      'api::session.session': ApiSessionSession;
+      'api::service.service': ApiServiceService;
     }
   }
 }
