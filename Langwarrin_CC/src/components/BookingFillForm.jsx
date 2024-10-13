@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import {useForm, Controller} from 'react-hook-form';
 
 import "./styles/FillForm.css";
+import Swal from 'sweetalert2';
 
 
 // npm i @emailjs/browser
@@ -25,6 +26,11 @@ const BookingFillForm = () => {
       )
       .then(
         (result) => {
+          Swal.fire({
+            title: "Form Sent!",
+            text: "Kindly Wait for Our Response.",
+            icon: "success"
+          });
           console.log(result.text);
           console.log("message sent");
         },
@@ -40,7 +46,16 @@ const BookingFillForm = () => {
   )
     .toISOString()
     .slice(0,16);
-    
+
+  const [mouseOverColor, setMouseOverColor] = useState(null);
+
+  const mouseOverOn = () => {
+    setMouseOverColor("#88c483");
+  }
+
+  const mouseOverOff = () => {
+    setMouseOverColor(null);
+  }
   
 
   return (
@@ -83,13 +98,7 @@ const BookingFillForm = () => {
               {...register("guest_number")}
               required
             />
-        {/*
-          <select name="type" >
-            <option value="Room Booking">Room Booking</option>
-            <option value="Class Enrollment">Class Enrollment</option>
-          </select>
-          */
-        }
+
         <label>Date of Booking</label>
             <input 
               type="datetime-local"
@@ -99,7 +108,11 @@ const BookingFillForm = () => {
 
           <label>Message</label>
           <textarea {...register("message")} />
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send"
+            style = {{backgroundColor: mouseOverColor}}
+            onMouseOver={mouseOverOn}
+            onMouseOut={mouseOverOff}
+          />
         </form>
       </div>
   );
