@@ -48,7 +48,7 @@ function HomeCards() {
         </Card>
         <Card className='card-image'>
           <Nav.Link href="https://www.facebook.com/LangwarrinCommunityCentreInc/?ref=embed_page" className='image-link'>
-            <Card.Img variant="top" src={`${BASE_URL}${data.Image.data.attributes.url}`} />
+            <Card.Img variant="top" src={`${data.Image.data.attributes.url}`} />
           </Nav.Link>
         </Card>
       </CardGroup>

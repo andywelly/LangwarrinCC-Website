@@ -33,7 +33,7 @@ function HomeCarousel() {
           <Carousel.Item key={item.id}>
             <img
               className="carousel-image"
-              src={`${BASE_URL}${item.Image.data.attributes.url}`} // Adjust URL as needed
+              src={`${item.Image.data.attributes.url}`} // Adjust URL as needed
               alt={item.Caption} // Use Caption as alt text
             />
             <Carousel.Caption>

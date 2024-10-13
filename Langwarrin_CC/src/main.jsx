@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Home from './pages/Home.jsx'
-import Services from './pages/Services.jsx'
 import Childcare from './pages/Childcare.jsx'
 import Forms from './pages/Forms.jsx'
 import About from './pages/About.jsx'
@@ -10,6 +9,7 @@ import Enrol from './pages/Enrol.jsx'
 import Literacy from './pages/Literacy.jsx'
 import Community from './pages/Community.jsx'
 import Hobbies from './pages/Hobbies.jsx'
+import ServicesV2 from './pages/ServicesV2.jsx'
 import BookingForms from './pages/BookingForms.jsx'
 import ChildcareForms from './pages/ChildcareForms.jsx'
 import ServiceForms from './pages/ServiceForms.jsx'
@@ -25,10 +25,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home/>
-  },
-  {
-    path: "services",
-    element: <Services/>
   },
   {
     path: "childcare",
@@ -73,6 +69,11 @@ const router = createBrowserRouter([
   {
     path: "serviceForms",
     element: <ServiceForms/>
+  },
+
+  {
+    path: "services2",
+    element: <ServicesV2/>
   },
 
 ]);
