@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "computers",
+  "info": {
+    "singularName": "computer",
+    "pluralName": "computers",
+    "displayName": "Computer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "text"
+    },
+    "Description": {
+      "displayName": "DotPoint",
+      "type": "component",
+      "repeatable": true,
+      "component": "list.dot-point"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

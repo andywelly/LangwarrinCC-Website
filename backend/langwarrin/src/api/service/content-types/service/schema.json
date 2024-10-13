@@ -18,44 +18,36 @@
     "Text1": {
       "type": "text"
     },
-    "Text2": {
-      "type": "text"
-    },
-    "Service": {
+    "ServiceGroup": {
       "type": "component",
       "repeatable": true,
-      "component": "grid.grid-item"
+      "component": "grid.grid-group"
     },
     "Heading2": {
       "type": "string"
     },
-    "Text3": {
+    "Text2": {
       "type": "text"
     },
     "Icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "File": {
+      ],
       "type": "media",
-      "multiple": false,
-      "required": false,
+      "multiple": false
+    },
+    "pdf": {
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
-    },
-    "Text4": {
-      "type": "text"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

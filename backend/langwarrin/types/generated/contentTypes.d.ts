@@ -852,6 +852,40 @@ export interface ApiChildcareChildcare extends Schema.SingleType {
   };
 }
 
+export interface ApiComputerComputer extends Schema.CollectionType {
+  collectionName: 'computers';
+  info: {
+    singularName: 'computer';
+    pluralName: 'computers';
+    displayName: 'Computer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Text: Attribute.Text;
+    Description: Attribute.Component<'list.dot-point', true>;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::computer.computer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::computer.computer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCourseCourse extends Schema.CollectionType {
   collectionName: 'courses';
   info: {
@@ -987,13 +1021,11 @@ export interface ApiServiceService extends Schema.SingleType {
   attributes: {
     Heading1: Attribute.String;
     Text1: Attribute.Text;
-    Text2: Attribute.Text;
-    Service: Attribute.Component<'grid.grid-item', true>;
+    ServiceGroup: Attribute.Component<'grid.grid-group', true>;
     Heading2: Attribute.String;
-    Text3: Attribute.Text;
+    Text2: Attribute.Text;
     Icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    File: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Text4: Attribute.Text;
+    pdf: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1032,6 +1064,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::childcare.childcare': ApiChildcareChildcare;
+      'api::computer.computer': ApiComputerComputer;
       'api::course.course': ApiCourseCourse;
       'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;

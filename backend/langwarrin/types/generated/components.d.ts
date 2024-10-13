@@ -1,5 +1,16 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ListDotPoint extends Schema.Component {
+  collectionName: 'components_list_dot_points';
+  info: {
+    displayName: 'DotPoint';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Point: Attribute.Text;
+  };
+}
+
 export interface HomeCardCardText extends Schema.Component {
   collectionName: 'components_home_card_card_texts';
   info: {
@@ -40,6 +51,18 @@ export interface GridGridItem extends Schema.Component {
   };
 }
 
+export interface GridGridGroup extends Schema.Component {
+  collectionName: 'components_grid_grid_groups';
+  info: {
+    displayName: 'GridGroup';
+    icon: 'apps';
+  };
+  attributes: {
+    Heading: Attribute.String;
+    GridItem: Attribute.Component<'grid.grid-item', true>;
+  };
+}
+
 export interface CarouselCarouselItem extends Schema.Component {
   collectionName: 'components_carousel_carousel_items';
   info: {
@@ -70,9 +93,11 @@ export interface CardsCardText extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'list.dot-point': ListDotPoint;
       'home-card.card-text': HomeCardCardText;
       'header.cover-image': HeaderCoverImage;
       'grid.grid-item': GridGridItem;
+      'grid.grid-group': GridGridGroup;
       'carousel.carousel-item': CarouselCarouselItem;
       'cards.card-text': CardsCardText;
     }
