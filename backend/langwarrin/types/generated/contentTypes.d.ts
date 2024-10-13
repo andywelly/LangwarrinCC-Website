@@ -830,6 +830,68 @@ export interface ApiClassClass extends Schema.CollectionType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    adressLine1: Attribute.String;
+    adressLine2: Attribute.String;
+    phoneNumber: Attribute.String;
+    email: Attribute.Email;
+    operationalHoursTitle: Attribute.String;
+    operationalDays: Attribute.String;
+    operationalHours: Attribute.String;
+    organisationName: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CarouselImage: Attribute.Component<'carousel.carousel-item', true>;
+    Header: Attribute.Component<'header.cover-image'>;
+    HomeCard: Attribute.Component<'home-card.card-text'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRoomRoom extends Schema.CollectionType {
   collectionName: 'rooms';
   info: {
@@ -926,6 +988,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::class.class': ApiClassClass;
+      'api::footer.footer': ApiFooterFooter;
+      'api::home.home': ApiHomeHome;
       'api::room.room': ApiRoomRoom;
       'api::session.session': ApiSessionSession;
     }
