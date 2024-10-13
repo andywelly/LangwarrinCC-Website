@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import {useForm, Controller} from 'react-hook-form';
@@ -46,6 +46,16 @@ const BookingFillForm = () => {
   )
     .toISOString()
     .slice(0,16);
+
+  const [mouseOverColor, setMouseOverColor] = useState(null);
+
+  const mouseOverOn = () => {
+    setMouseOverColor("#88c483");
+  }
+
+  const mouseOverOff = () => {
+    setMouseOverColor(null);
+  }
   
 
   return (
@@ -98,7 +108,11 @@ const BookingFillForm = () => {
 
           <label>Message</label>
           <textarea {...register("message")} />
-          <input type="submit" value="Send"/>
+          <input type="submit" value="Send"
+            style = {{backgroundColor: mouseOverColor}}
+            onMouseOver={mouseOverOn}
+            onMouseOut={mouseOverOff}
+          />
         </form>
       </div>
   );

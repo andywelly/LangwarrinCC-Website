@@ -47,6 +47,15 @@ const ServiceFillForm = () => {
     .toISOString()
     .slice(0,16);
   
+  const [mouseOverColor, setMouseOverColor] = useState(null);
+
+  const mouseOverOn = () => {
+    setMouseOverColor("#88c483");
+  }
+
+  const mouseOverOff = () => {
+    setMouseOverColor(null);
+  }
 
   return (
       <div className="create">
@@ -95,7 +104,11 @@ const ServiceFillForm = () => {
 
           <label>Message</label>
           <textarea {...register("message")} />
-          <input type="submit" value="Send"/>
+          <input type="submit" value="Send"
+            style = {{backgroundColor: mouseOverColor}}
+            onMouseOver={mouseOverOn}
+            onMouseOut={mouseOverOff}
+          />
         </form>
       </div>
   );
