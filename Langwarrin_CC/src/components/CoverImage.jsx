@@ -29,7 +29,7 @@ function CoverImage() {
   return (
     <div className="cover-image-container">
       <Image 
-        src={`${BASE_URL}${data.Image.data.attributes.url}`} 
+        src={`${data.Image.data.attributes.url}`} 
         fluid 
         className="cover-image" 
       />
