@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 import {useForm, Controller} from 'react-hook-form';
 
 import "./styles/FillForm.css";
+import Swal from 'sweetalert2';
 
 
 // npm i @emailjs/browser
@@ -25,6 +26,11 @@ const ServiceFillForm = () => {
       )
       .then(
         (result) => {
+          Swal.fire({
+            title: "Form Sent!",
+            text: "Kindly Wait for Our Response.",
+            icon: "success"
+          });
           console.log(result.text);
           console.log("message sent");
         },
@@ -40,7 +46,6 @@ const ServiceFillForm = () => {
   )
     .toISOString()
     .slice(0,16);
-    
   
 
   return (
@@ -80,13 +85,7 @@ const ServiceFillForm = () => {
               {...register("guest_number")}
               required
             />
-        {/*
-          <select name="type" >
-            <option value="Room Booking">Room Booking</option>
-            <option value="Class Enrollment">Class Enrollment</option>
-          </select>
-          */
-        }
+
         <label>Start of Enrolment</label>
             <input 
               type="datetime-local"
@@ -96,7 +95,7 @@ const ServiceFillForm = () => {
 
           <label>Message</label>
           <textarea {...register("message")} />
-          <input type="submit" value="Send" />
+          <input type="submit" value="Send"/>
         </form>
       </div>
   );
