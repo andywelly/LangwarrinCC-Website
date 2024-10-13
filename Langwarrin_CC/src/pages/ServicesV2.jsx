@@ -18,8 +18,6 @@ function ServicesV2() {
         <p/><p/><p/>
         <article><center>Services</center></article>
         <div className="text"><center> 
-            This is service page version 2
-            
             <p> Connecting communities, fostering growth, and creating a place where everyone belongs.<br/><br/><br/></p>
         </center></div>
         

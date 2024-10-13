@@ -29,13 +29,9 @@ function NavigationBar() {
                 <Nav.Link href="/" className="links">
                   <Button variant="dark">Home</Button>
                 </Nav.Link>
-                <Nav.Link href="/services">
-                  <Button variant="dark">Services</Button>
-                </Nav.Link>
-
                 {/*This is a temp heading for service page version 2 */}
                 <Nav.Link href="/services2">
-                  <Button variant="dark">Services 2</Button>
+                  <Button variant="dark">Services</Button>
                 </Nav.Link>
 
                 <Nav.Link href="/childcare">
