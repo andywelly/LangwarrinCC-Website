@@ -13,6 +13,7 @@ import ServicesV2 from './pages/ServicesV2.jsx'
 import BookingForms from './pages/BookingForms.jsx'
 import ChildcareForms from './pages/ChildcareForms.jsx'
 import ServiceForms from './pages/ServiceForms.jsx'
+import GenericForms from './pages/GenericForms.jsx'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
   {
     path: "serviceForms",
     element: <ServiceForms/>
+  },
+  {
+    path: "genericForms",
+    element: <GenericForms/>
   },
 
   {
