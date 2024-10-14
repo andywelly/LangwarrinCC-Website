@@ -11,9 +11,6 @@ import roomImg from "../assets/mainRoom.png";
 
 import './styles/Grid.css'; // Import the updated CSS file
 
-
-const BookingFormsLink = "/bookingForms";
-const ChildcareFormsLink = "/childcareForms";
 const ServicesFormsLink = "/serviceForms";
 
 function Grid() {
@@ -84,7 +81,7 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to={BookingFormsLink}>
+                      <Link to={ServicesFormsLink}>
                         <Button className="card-button">Read More</Button>
                       </Link>
                     </Card.Body>
