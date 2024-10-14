@@ -9,6 +9,16 @@ function Community() {
         <div>
             <Header/>
             <br></br>
+            <h1
+            style={{
+            color: "#32CD32",
+            fontSize: "3rem",
+            textAlign: "center",
+            margin: "20px 0",
+            }}
+             >
+            Community
+            </h1>
             <CommunityGrid/>
             <br></br>
             <Footer/>

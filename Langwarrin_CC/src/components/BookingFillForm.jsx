@@ -60,7 +60,7 @@ const BookingFillForm = () => {
 
   return (
       <div className="create">
-        <h2> Booking Room Form </h2>
+        <h2> Room Booking </h2>
         <form onSubmit={handleSubmit(sendEmail)}> {/*need to be done in this format because of multiple dropdown value*/}
           <label>Name</label>
             <input 
@@ -85,9 +85,9 @@ const BookingFillForm = () => {
                   <option value="Hall">Hall (capacity : 80)</option>
                   <option value="Craig Room">Craig Room (capacity : 20)</option>
                   <option value="Hempel Room">Hempel Room (capacity: 10)</option>
-                  <option value="Hampton Room">Hampton Room (capaciy: 25)</option>
-                  <option value="Back Spare Office">Back Spare Office (capaciy: 6)</option>
-                  <option value="Children's Room and Playground">Children's Room and Playground (capaciy: 30)</option>
+                  <option value="Hampton Room">Hampton Room (capacity: 25)</option>
+                  <option value="Back Spare Office">Back Spare Office (capacity: 6)</option>
+                  <option value="Children's Room and Playground">Children's Room and Playground (capacity: 30)</option>
                 </select>
               )   }
         >   </Controller>

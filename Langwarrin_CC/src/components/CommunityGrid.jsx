@@ -5,9 +5,9 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
 import orchidImg from "../assets/orchidSociety.jpg";
-import buildingImg from "../assets/building.jpg";
+import buildingImg from "../assets/Building.jpg";
 import foodBankImg from "../assets/foodBank.png";
-import roomImg from "../assets/mainRoom.png";
+import roomImg from "../assets/rooms/mainRoom.png";
 
 import './styles/Grid.css'; // Import the updated CSS file
 
