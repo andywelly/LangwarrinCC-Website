@@ -60,7 +60,7 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to={BookingFormsLink}>
+                      <Link to={ChildcareForms}>
                         <Button className="card-button">Read More</Button>
                       </Link>
                     </Card.Body>

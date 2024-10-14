@@ -59,7 +59,7 @@ const ServiceFillForm = () => {
 
   return (
       <div className="create">
-        <h2> Courses Enrolment Form </h2>
+        <h2> Course Enquiry and Enrolment </h2>
         <form onSubmit={handleSubmit(sendEmail)}> {/*need to be done in this format because of multiple dropdown value*/}
           <label>Name</label>
             <input 
@@ -88,12 +88,6 @@ const ServiceFillForm = () => {
               )   }
         >   </Controller>
         
-        <label>Number of Participants</label>
-            <input 
-              type="text" pattern="[0-9]*" 
-              {...register("guest_number")}
-              required
-            />
 
         <label>Start of Enrolment</label>
             <input 
