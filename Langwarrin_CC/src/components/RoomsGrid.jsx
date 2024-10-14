@@ -4,38 +4,78 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
-import orchidImg from "../assets/orchidSociety.jpg";
-import buildingImg from "../assets/building.jpg";
-import foodBankImg from "../assets/foodBank.png";
-import roomImg from "../assets/rooms/mainRoom.png";
+import mainRoom from "../assets/rooms/mainRoom.png";
+import craigRoom from "../assets/rooms/craigRoom.png";
+import hempelRoom from "../assets/rooms/hempelRoom.png";
+import hamptonRoom from "../assets/rooms/hamptonRoom.png";
+import backSpareOffice from "../assets/rooms/backSpareOffice.png";
 
 import './styles/Grid.css'; // Import the updated CSS file
 
 
 const BookingFormsLink = "/bookingForms";
-const ServicesFormsLink = "/serviceForms";
 
-function Grid() {
+function RoomsGrid() {
   const cardData = [
     {
-      imgSrc: orchidImg,
-      title: "Community Groups - Mornington Peninsula Orchid Society",
-      text: "New members are always welcome. Starts: Every third Friday (except December). Time:  7.00 pm - 10.00 pm",
+      imgSrc: mainRoom,
+      title: "Hall Full Area",
+      text: (
+        <>
+          <p>Casual Hirers: $50.00</p>
+          <p>Permanent Hirers (non-community groups): $35.00</p>
+          <p>Community Group: $25.00</p>
+          <p>Capacity: 100 people</p>
+        </>
+      )
     },
     {
-      imgSrc: foodBankImg,
-      title: "Community Support - Food Bank Donations",
-      text: "Please help us give to those in need of extra assistance and doing it tough with the cost of living pressures. We accept donations of food (canned, dried, long life items etc and personal care items here at the Community Centre)",
+      imgSrc: craigRoom,
+      title: "Craig Room",
+      text: (
+        <>
+          <p>Casual Hirers: $30.00</p>
+          <p>Permanent Hirers (non-community groups): $23.00</p>
+          <p>Community Group: $15.00</p>
+          <p>Capacity: 20 people</p>
+        </>
+      )
     },
     {
-      imgSrc: buildingImg,
-      title: "Community Events",
-      text: "Construction at Langwarrin Community Centre is expected to commence in October 2024.  It will be business as usual at the Centre with some slight disruption!  There will be some room changes while construction takes place.",
+      imgSrc: hempelRoom,
+      title: "Hempel Room",
+      text: (
+        <>
+          <p>Casual Hirers: $30.00</p>
+          <p>Permanent Hirers (non-community groups): $23.00</p>
+          <p>Community Group: $15.00</p>
+          <p>Capacity: 10 people</p>
+        </>
+      )
     },
     {
-      imgSrc: roomImg,
-      title: "Community Services - Room Hire",
-      text: "Phone the Centre on 9789 7653, or send us an email for more details"
+      imgSrc: hamptonRoom,
+      title: "Hampton Room",
+      text: (
+        <>
+          <p>Casual Hirers: $31.00</p>
+          <p>Permanent Hirers (non-community groups): $28.00</p>
+          <p>Community Group: $17.00</p>
+          <p>Capacity: 25 people</p>
+        </>
+      )
+    },
+    {
+      imgSrc: backSpareOffice,
+      title: "Back Spare Office",
+      text: (
+        <>
+          <p>Casual Hirers: $25.00</p>
+          <p>Permanent Hirers (non-community groups): $19.00</p>
+          <p>Community Group: $17.00</p>
+          <p>Capacity: 6 people</p>
+        </>
+      )
     },
   ];
 
@@ -61,8 +101,8 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to={ServicesFormsLink}>
-                        <Button className="card-button">Read More</Button>
+                      <Link to={BookingFormsLink}>
+                        <Button className="card-button">Hire Now</Button>
                       </Link>
                     </Card.Body>
                   </Col>
@@ -84,7 +124,7 @@ function Grid() {
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
                       <Link to={BookingFormsLink}>
-                        <Button className="card-button">Read More</Button>
+                        <Button className="card-button">Hire Now</Button>
                       </Link>
                     </Card.Body>
                   </Col>
@@ -95,7 +135,8 @@ function Grid() {
         ))}
       </Row>
     </div>
+    
   );
 }
 
-export default Grid;
+export default RoomsGrid;

@@ -17,7 +17,16 @@ function ServicesV2() {
     <div>
         <Header/>
         <p/><p/><p/>
-        <article><center>Services</center></article>
+        <h1
+        style={{
+          color: "#32CD32",
+          fontSize: "3rem",
+          textAlign: "center",
+          margin: "20px 0",
+        }}
+      >
+        Services
+      </h1>
         <div className="text"><center> 
             <p> Connecting communities, fostering growth, and creating a place where everyone belongs.</p>
             <p> Langwarrin Community Centre Inc. aims to be the focal point of contact for the community.</p>

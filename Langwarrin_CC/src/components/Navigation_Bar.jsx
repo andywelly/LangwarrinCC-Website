@@ -37,7 +37,7 @@ function NavigationBar() {
                 <Nav.Link href="/childcare">
                   <Button variant="dark">Childcare</Button>
                 </Nav.Link>
-                <Nav.Link href="/bookingForms">
+                <Nav.Link href="/rooms">
                   <Button variant="dark">Room Hire</Button>
                 </Nav.Link>
                 <Nav.Link href="/forms">

@@ -13,7 +13,16 @@ function Form() {
         <Header/>
 
         <p/><p/><p/>
-        <article><center>Services</center></article>
+        <h1
+        style={{
+          color: "#32CD32",
+          fontSize: "3rem",
+          textAlign: "center",
+          margin: "20px 0",
+        }}
+        >
+        Forms
+         </h1>
         <div className="text"><center> 
             <p> Connect with us and get in touch by using our forms.</p>
             <Button variant="secondary" size="lg" style={{ fontSize: '24px', padding: '15px 30px' }}>
