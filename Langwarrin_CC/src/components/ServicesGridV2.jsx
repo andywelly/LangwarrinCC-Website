@@ -40,7 +40,6 @@ function ServicesGridV2() {
     const cardData = [
         {   name: "Computer/Business Courses",
             courses: [
-        
                 {
                     imgSrc: freeIpadWorkshop,
                     title: "iPhone / iPad Workshops (Free) ",
@@ -56,13 +55,10 @@ function ServicesGridV2() {
                     title: "Computer Classes for Disability Support",
                     text: "This course is for people with an intellectual disability to assist them with computer techniques.",
                 },
-                
             ]
         },
-
         {   name: "Literacy / Further Education",
             courses: [
-        
                 {
                     imgSrc: readingWriting,
                     title: "Reading and Writing",
@@ -83,14 +79,10 @@ function ServicesGridV2() {
                     title: "Brain Benders",
                     text: "Group activity that could help you in your everyday life, work an study",
                 },
-                
-                
             ]
         },
-
         {   name: "Craft / Hobbies / Fun",
             courses: [
-        
                 {
                     imgSrc: knit,
                     title: "Close Knit Community",
@@ -114,17 +106,12 @@ function ServicesGridV2() {
                 {
                     imgSrc: boatLicense,
                     title: "Boat License",
-                    text: "Join our Boat Licensse Course to master essential boating skills and regulations in flexible half-day evening, or private sessions",
-                    /* This is a more interesting and concise description compared to the original website*/ 
+                    text: "Join our Boat License Course to master essential boating skills and regulations in flexible half-day evening, or private sessions",
                 },
-                
-                
             ]
         },
-
         {   name: "Exercise / Health / Wellbeing",
             courses: [
-        
                 {
                     imgSrc: stillness,
                     title: "Moments of Stillness",
@@ -143,7 +130,7 @@ function ServicesGridV2() {
                 {
                     imgSrc: kungfu,
                     title: "Kid's Kung Fu & Adult Kickboxing",
-                    text: "An interesting mixture of Boxing, Grappling, Kickboxing, Wing Chun and Self Defence. An exciting activity which provides an opportunity to develop and improve strength, co-ordination, balance, self discipline and self esteem. Classes for adults, adolescents and children.",
+                    text: "An interesting mixture of Boxing, Grappling, Kickboxing, Wing Chun and Self Defence. An exciting activity which provides an opportunity to develop and improve strength, co-ordination, balance, self discipline and self esteem.",
                 },
                 {
                     imgSrc: reiki,
@@ -155,50 +142,52 @@ function ServicesGridV2() {
                     title: "Age Strong",
                     text: "Strength and balance program using resistance & weights, designed for older people. In partnership with Peninsula Health.",
                 },
-                
-                
             ]
         },
     ];
   
     return (
-        <div>
-            
+        <div style={{ width: '80%', margin: '0 auto' }}>
             {cardData.map((main) => (
-                <Row key={main} className="main-category">
-                    <article><center>{main.name}</center></article> {/*the main category name*/}
-                <div className="grid-container">
-                    <Row xs={3} md={3} className="justify-content-md-center" >
-                        {main.courses.map((card) => ( 
-                            <Col key={card}>
-                                <Row className="align-items-center justify-content-md-center">
-                                    <Col md={10} className = 'courseCard'> 
-                                        <Container>
-                                            <Row><Card.Img
-                                                variant="top"
-                                                src={card.imgSrc}
-                                                alt={card.title}
-                                                className="img-fluid card-img"
-                                            /> </Row>
-                                            <Row><div className='title'>{card.title}</div></Row>
-                                            <Row><Card.Body>
-                                                <Card.Text>{card.text}</Card.Text>
-                                                <Link to="/computer">
-                                                <Button className="card-button">Read More</Button>
-                                                </Link>
-                                            </Card.Body> </Row>
-                                        </Container>
-                                    </Col >
-                                
-                                </Row>
-                            </Col>
-                        ))}
-                    </Row>
-                </div>
+                <Row key={main.name} className="main-category" style={{ marginBottom: '30px' }}>
+                    <article><center>{main.name}</center></article>
+                    <div className="grid-container">
+                        <Row xs={3} md={3} className="justify-content-md-center">
+                            {main.courses.map((card) => (
+                                <Col key={card.title}>
+                                    <Row className="align-items-center justify-content-md-center">
+                                        <Col md={10} className="courseCard"> 
+                                            <Container>
+                                                <Row>
+                                                    <Card.Img
+                                                        variant="top"
+                                                        src={card.imgSrc}
+                                                        alt={card.title}
+                                                        className="img-fluid card-img"
+                                                    />
+                                                </Row>
+                                                <Row>
+                                                    <div className="title">{card.title}</div>
+                                                </Row>
+                                                <Row>
+                                                    <Card.Body>
+                                                        <p>{card.text}</p>
+                                                        <Link to="/computer">
+                                                            <Button className="card-button">Read More</Button>
+                                                        </Link>
+                                                    </Card.Body>
+                                                </Row>
+                                            </Container>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            ))}
+                        </Row>
+                    </div>
                 </Row>
             ))}
         </div>
     );
-  }
- 
+}
+
 export default ServicesGridV2;
