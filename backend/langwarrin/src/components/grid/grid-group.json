@@ -2,17 +2,13 @@
   "collectionName": "components_grid_grid_groups",
   "info": {
     "displayName": "GridGroup",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Heading": {
       "type": "string"
-    },
-    "GridItem": {
-      "type": "component",
-      "repeatable": true,
-      "component": "grid.grid-item"
     }
   }
 }

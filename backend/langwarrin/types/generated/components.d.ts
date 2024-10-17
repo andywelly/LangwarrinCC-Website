@@ -57,10 +57,10 @@ export interface GridGridGroup extends Schema.Component {
   info: {
     displayName: 'GridGroup';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     Heading: Attribute.String;
-    GridItem: Attribute.Component<'grid.grid-item', true>;
   };
 }
 

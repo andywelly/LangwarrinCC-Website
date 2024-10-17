@@ -1114,13 +1114,14 @@ export interface ApiRoomHireRoomHire extends Schema.SingleType {
     singularName: 'room-hire';
     pluralName: 'room-hires';
     displayName: 'RoomHire';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    IndividualBond: Attribute.Decimal;
-    PermanentBond: Attribute.Decimal;
+    Subtext: Attribute.Text;
+    Description: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
