@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "computers",
+  "collectionName": "educations",
   "info": {
-    "singularName": "computer",
-    "pluralName": "computers",
-    "displayName": "Computer",
+    "singularName": "education",
+    "pluralName": "educations",
+    "displayName": "Education",
     "description": ""
   },
   "options": {

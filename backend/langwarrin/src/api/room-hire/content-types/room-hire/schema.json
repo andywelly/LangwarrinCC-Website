@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "room_hires",
+  "info": {
+    "singularName": "room-hire",
+    "pluralName": "room-hires",
+    "displayName": "RoomHire"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "IndividualBond": {
+      "type": "decimal"
+    },
+    "PermanentBond": {
+      "type": "decimal"
+    }
+  }
+}

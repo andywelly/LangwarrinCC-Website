@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * course controller
+ * room-hire controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::course.course');
+module.exports = createCoreController('api::room-hire.room-hire');

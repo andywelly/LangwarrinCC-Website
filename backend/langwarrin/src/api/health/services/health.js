@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * course service
+ * health service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::course.course');
+module.exports = createCoreService('api::health.health');

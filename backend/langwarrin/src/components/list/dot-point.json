@@ -2,11 +2,12 @@
   "collectionName": "components_list_dot_points",
   "info": {
     "displayName": "DotPoint",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Point": {
+    "DotPoint": {
       "type": "text"
     }
   }

@@ -5,21 +5,10 @@ export interface ListDotPoint extends Schema.Component {
   info: {
     displayName: 'DotPoint';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
-    Point: Attribute.Text;
-  };
-}
-
-export interface HeaderCoverImage extends Schema.Component {
-  collectionName: 'components_header_cover_images';
-  info: {
-    displayName: 'Cover Image';
-    icon: 'collapse';
-  };
-  attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    ImageText: Attribute.String;
+    DotPoint: Attribute.Text;
   };
 }
 
@@ -33,6 +22,18 @@ export interface HomeCardCardText extends Schema.Component {
   attributes: {
     Description: Attribute.Text;
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface HeaderCoverImage extends Schema.Component {
+  collectionName: 'components_header_cover_images';
+  info: {
+    displayName: 'Cover Image';
+    icon: 'collapse';
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ImageText: Attribute.String;
   };
 }
 
@@ -94,8 +95,8 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'list.dot-point': ListDotPoint;
-      'header.cover-image': HeaderCoverImage;
       'home-card.card-text': HomeCardCardText;
+      'header.cover-image': HeaderCoverImage;
       'grid.grid-item': GridGridItem;
       'grid.grid-group': GridGridGroup;
       'carousel.carousel-item': CarouselCarouselItem;

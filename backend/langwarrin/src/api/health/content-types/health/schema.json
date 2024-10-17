@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "computers",
+  "collectionName": "healths",
   "info": {
-    "singularName": "computer",
-    "pluralName": "computers",
-    "displayName": "Computer",
-    "description": ""
+    "singularName": "health",
+    "pluralName": "healths",
+    "displayName": "Health"
   },
   "options": {
     "draftAndPublish": true
@@ -16,15 +15,14 @@
       "type": "string"
     },
     "Image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": false
     },
     "Description": {
       "type": "blocks"

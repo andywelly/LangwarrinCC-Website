@@ -1,5 +1,5 @@
 {
-  "/courses": {
+  "/educations": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseListResponse"
+                "$ref": "#/components/schemas/EducationListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Course"
+        "Education"
       ],
       "parameters": [
         {
@@ -170,7 +170,7 @@
           }
         }
       ],
-      "operationId": "get/courses"
+      "operationId": "get/educations"
     },
     "post": {
       "responses": {
@@ -179,7 +179,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseResponse"
+                "$ref": "#/components/schemas/EducationResponse"
               }
             }
           }
@@ -236,23 +236,23 @@
         }
       },
       "tags": [
-        "Course"
+        "Education"
       ],
       "parameters": [],
-      "operationId": "post/courses",
+      "operationId": "post/educations",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/CourseRequest"
+              "$ref": "#/components/schemas/EducationRequest"
             }
           }
         }
       }
     }
   },
-  "/courses/{id}": {
+  "/educations/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -260,7 +260,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseResponse"
+                "$ref": "#/components/schemas/EducationResponse"
               }
             }
           }
@@ -317,7 +317,7 @@
         }
       },
       "tags": [
-        "Course"
+        "Education"
       ],
       "parameters": [
         {
@@ -331,7 +331,7 @@
           }
         }
       ],
-      "operationId": "get/courses/{id}"
+      "operationId": "get/educations/{id}"
     },
     "put": {
       "responses": {
@@ -340,7 +340,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CourseResponse"
+                "$ref": "#/components/schemas/EducationResponse"
               }
             }
           }
@@ -397,7 +397,7 @@
         }
       },
       "tags": [
-        "Course"
+        "Education"
       ],
       "parameters": [
         {
@@ -411,13 +411,13 @@
           }
         }
       ],
-      "operationId": "put/courses/{id}",
+      "operationId": "put/educations/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/CourseRequest"
+              "$ref": "#/components/schemas/EducationRequest"
             }
           }
         }
@@ -488,7 +488,7 @@
         }
       },
       "tags": [
-        "Course"
+        "Education"
       ],
       "parameters": [
         {
@@ -502,7 +502,7 @@
           }
         }
       ],
-      "operationId": "delete/courses/{id}"
+      "operationId": "delete/educations/{id}"
     }
   }
 }
