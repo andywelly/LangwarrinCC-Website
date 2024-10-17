@@ -4,6 +4,7 @@ import ServicesGrid from "../components/ServicesGridV2";
 import ServicesButton from "../components/ServicesButton";
 
 import Brochure from '../assets/icons8-brochure-100.png';
+import { Button, Nav } from "react-bootstrap";
 
 const BrochureLink =  '/'
 
@@ -16,11 +17,26 @@ function ServicesV2() {
     <div>
         <Header/>
         <p/><p/><p/>
-        <article><center>Services</center></article>
+        <h1
+        style={{
+          color: "#32CD32",
+          fontSize: "3rem",
+          textAlign: "center",
+          margin: "20px 0",
+        }}
+      >
+        Services
+      </h1>
         <div className="text"><center> 
-            <p> Connecting communities, fostering growth, and creating a place where everyone belongs.<br/><br/><br/></p>
+            <p> Connecting communities, fostering growth, and creating a place where everyone belongs.</p>
+            <p> Langwarrin Community Centre Inc. aims to be the focal point of contact for the community.</p>
+            <p> As such, we offer a broad range of services and groups to appeal to all.</p>
+            <Button variant="secondary" size="lg" style={{ fontSize: '24px', padding: '15px 30px' }}>
+                <Nav.Link href="/community" className="community-link">View Our Community</Nav.Link>
+            </Button>
+            <br/><br/>
         </center></div>
-        
+
         
         <ServicesGrid Summary/>
         

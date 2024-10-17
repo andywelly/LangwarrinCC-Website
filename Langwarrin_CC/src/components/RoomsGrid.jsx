@@ -4,37 +4,78 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
-import possumImg from "../assets/possum.png";
-import koalaImg from "../assets/koala.png";
-import childrenPlayingImg from "../assets/children_playing.png";
-import cartoonChildrenImg from "../assets/cartoon_children.png";
+import mainRoom from "../assets/rooms/mainRoom.png";
+import craigRoom from "../assets/rooms/craigRoom.png";
+import hempelRoom from "../assets/rooms/hempelRoom.png";
+import hamptonRoom from "../assets/rooms/hamptonRoom.png";
+import backSpareOffice from "../assets/rooms/backSpareOffice.png";
+
 import './styles/Grid.css'; // Import the updated CSS file
-import ChildcareForms from "../pages/ChildcareForms";
+
 
 const BookingFormsLink = "/bookingForms";
-const ChildcareFormsLink = "/childcareForms";
 
-function Grid() {
+function RoomsGrid() {
   const cardData = [
     {
-      imgSrc: possumImg,
-      title: "Community Childcare - Possum Group",
-      text: "We provide engaging early learning experiences for children from 6 weeks to 4 years old.",
+      imgSrc: mainRoom,
+      title: "Hall Full Area",
+      text: (
+        <>
+          <p>Casual Hirers: $50.00</p>
+          <p>Permanent Hirers (non-community groups): $35.00</p>
+          <p>Community Group: $25.00</p>
+          <p>Capacity: 100 people</p>
+        </>
+      )
     },
     {
-      imgSrc: koalaImg,
-      title: "Community Childcare - Koala Group",
-      text: "Our 3+ year old Koala group delivers structured educational sessions through play-based activities.",
+      imgSrc: craigRoom,
+      title: "Craig Room",
+      text: (
+        <>
+          <p>Casual Hirers: $30.00</p>
+          <p>Permanent Hirers (non-community groups): $23.00</p>
+          <p>Community Group: $15.00</p>
+          <p>Capacity: 20 people</p>
+        </>
+      )
     },
     {
-      imgSrc: childrenPlayingImg,
-      title: "Outside School Hours Care",
-      text: "Staying late at work? We have before and after school care for school-aged children.",
+      imgSrc: hempelRoom,
+      title: "Hempel Room",
+      text: (
+        <>
+          <p>Casual Hirers: $30.00</p>
+          <p>Permanent Hirers (non-community groups): $23.00</p>
+          <p>Community Group: $15.00</p>
+          <p>Capacity: 10 people</p>
+        </>
+      )
     },
     {
-      imgSrc: cartoonChildrenImg,
-      title: "Children Activities",
-      text: "Take a look at our great children activities! Children's Drama Academy and Mini Maestros.",
+      imgSrc: hamptonRoom,
+      title: "Hampton Room",
+      text: (
+        <>
+          <p>Casual Hirers: $31.00</p>
+          <p>Permanent Hirers (non-community groups): $28.00</p>
+          <p>Community Group: $17.00</p>
+          <p>Capacity: 25 people</p>
+        </>
+      )
+    },
+    {
+      imgSrc: backSpareOffice,
+      title: "Back Spare Office",
+      text: (
+        <>
+          <p>Casual Hirers: $25.00</p>
+          <p>Permanent Hirers (non-community groups): $19.00</p>
+          <p>Community Group: $17.00</p>
+          <p>Capacity: 6 people</p>
+        </>
+      )
     },
   ];
 
@@ -60,8 +101,8 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to={ChildcareForms}>
-                        <Button className="card-button">Read More</Button>
+                      <Link to={BookingFormsLink}>
+                        <Button className="card-button">Hire Now</Button>
                       </Link>
                     </Card.Body>
                   </Col>
@@ -82,8 +123,8 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to={ChildcareFormsLink}>
-                        <Button className="card-button">Read More</Button>
+                      <Link to={BookingFormsLink}>
+                        <Button className="card-button">Hire Now</Button>
                       </Link>
                     </Card.Body>
                   </Col>
@@ -94,7 +135,8 @@ function Grid() {
         ))}
       </Row>
     </div>
+    
   );
 }
 
-export default Grid;
+export default RoomsGrid;

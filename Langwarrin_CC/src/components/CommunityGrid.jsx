@@ -4,37 +4,36 @@ import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
-import possumImg from "../assets/possum.png";
-import koalaImg from "../assets/koala.png";
-import childrenPlayingImg from "../assets/children_playing.png";
-import cartoonChildrenImg from "../assets/cartoon_children.png";
-import './styles/Grid.css'; // Import the updated CSS file
-import ChildcareForms from "../pages/ChildcareForms";
+import orchidImg from "../assets/orchidSociety.jpg";
+import buildingImg from "../assets/Building.jpg";
+import foodBankImg from "../assets/foodBank.png";
+import roomImg from "../assets/rooms/mainRoom.png";
 
-const BookingFormsLink = "/bookingForms";
-const ChildcareFormsLink = "/childcareForms";
+import './styles/Grid.css'; // Import the updated CSS file
+
+const ServicesFormsLink = "/serviceForms";
 
 function Grid() {
   const cardData = [
     {
-      imgSrc: possumImg,
-      title: "Community Childcare - Possum Group",
-      text: "We provide engaging early learning experiences for children from 6 weeks to 4 years old.",
+      imgSrc: orchidImg,
+      title: "Community Groups - Mornington Peninsula Orchid Society",
+      text: "New members are always welcome. Starts: Every third Friday (except December). Time:  7.00 pm - 10.00 pm",
     },
     {
-      imgSrc: koalaImg,
-      title: "Community Childcare - Koala Group",
-      text: "Our 3+ year old Koala group delivers structured educational sessions through play-based activities.",
+      imgSrc: foodBankImg,
+      title: "Community Support - Food Bank Donations",
+      text: "Please help us give to those in need of extra assistance and doing it tough with the cost of living pressures. We accept donations of food (canned, dried, long life items etc and personal care items here at the Community Centre)",
     },
     {
-      imgSrc: childrenPlayingImg,
-      title: "Outside School Hours Care",
-      text: "Staying late at work? We have before and after school care for school-aged children.",
+      imgSrc: buildingImg,
+      title: "Community Events",
+      text: "Construction at Langwarrin Community Centre is expected to commence in October 2024.  It will be business as usual at the Centre with some slight disruption!  There will be some room changes while construction takes place.",
     },
     {
-      imgSrc: cartoonChildrenImg,
-      title: "Children Activities",
-      text: "Take a look at our great children activities! Children's Drama Academy and Mini Maestros.",
+      imgSrc: roomImg,
+      title: "Community Services - Room Hire",
+      text: "Phone the Centre on 9789 7653, or send us an email for more details"
     },
   ];
 
@@ -60,7 +59,7 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to={ChildcareForms}>
+                      <Link to={ServicesFormsLink}>
                         <Button className="card-button">Read More</Button>
                       </Link>
                     </Card.Body>
@@ -82,7 +81,7 @@ function Grid() {
                         {card.title}
                       </Card.Title>
                       <Card.Text>{card.text}</Card.Text>
-                      <Link to={ChildcareFormsLink}>
+                      <Link to={ServicesFormsLink}>
                         <Button className="card-button">Read More</Button>
                       </Link>
                     </Card.Body>

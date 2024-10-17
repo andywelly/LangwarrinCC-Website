@@ -9,7 +9,7 @@ function Childcare() {
       <h1
         style={{
           color: "#32CD32",
-          fontSize: "2rem",
+          fontSize: "3rem",
           textAlign: "center",
           margin: "20px 0",
         }}
