@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "room_hires",
+  "info": {
+    "singularName": "room-hire",
+    "pluralName": "room-hires",
+    "displayName": "RoomHire",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Subtext": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "blocks"
+    }
+  }
+}

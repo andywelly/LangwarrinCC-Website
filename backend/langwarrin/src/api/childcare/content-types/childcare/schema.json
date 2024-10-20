@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "childcares",
+  "info": {
+    "singularName": "childcare",
+    "pluralName": "childcares",
+    "displayName": "Childcare"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "grid.grid-item"
+    }
+  }
+}

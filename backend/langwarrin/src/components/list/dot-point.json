@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_list_dot_points",
+  "info": {
+    "displayName": "DotPoint",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "DotPoint": {
+      "type": "text"
+    }
+  }
+}

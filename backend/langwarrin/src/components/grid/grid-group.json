@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_grid_grid_groups",
+  "info": {
+    "displayName": "GridGroup",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    }
+  }
+}
