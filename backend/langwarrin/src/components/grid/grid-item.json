@@ -7,24 +7,23 @@
   },
   "options": {},
   "attributes": {
+    "Title": {
+      "type": "string"
+    },
     "Image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ]
+      ],
+      "type": "media",
+      "multiple": true
     },
-    "Link": {
-      "type": "string"
+    "Description": {
+      "type": "text"
     },
-    "Title": {
-      "type": "string"
-    },
-    "Text": {
+    "ShortDescription": {
       "type": "text"
     }
   }

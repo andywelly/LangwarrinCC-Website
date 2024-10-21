@@ -1098,6 +1098,7 @@ export interface ApiRoomRoom extends Schema.CollectionType {
     PermHireFee: Attribute.String;
     CommHireFee: Attribute.String;
     Notes: Attribute.Text;
+    CasualHire: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1120,7 +1121,9 @@ export interface ApiRoomHireRoomHire extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    Subtext: Attribute.Text;
+    Title: Attribute.String;
+    Room: Attribute.Component<'room-card.room-card', true>;
+    HireRules: Attribute.Blocks;
     Description: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
