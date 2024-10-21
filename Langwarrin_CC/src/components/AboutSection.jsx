@@ -1,27 +1,45 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { API_URL } from "../constants";
 import './styles/AboutSection.css';
 
 function AboutSection() {
-    return (
-        <div className="information-section">
-            <section>
-                <h2>Vision</h2>
-                <p>To always be there for our Community, and to support it in being strong, positive and connected.</p>
-            </section>
-            <section>
-                <h2>Mission</h2>
-                <p>To provide a safe, respectful, welcoming and inclusive space for all the Community.</p>
-                <p>To be proactive in identifying and supporting the needs of people experiencing isolation, disadvantage, and vulnerability.</p>
-            </section>
-            <section>
-                <h2>Values</h2>
-                <p>Langwarrin Community Centre values lifelong learning and community participation and in all its dealings it will be professional, respectful, caring, ethical, and equitable.</p>
-            </section>
-            <section>
-                <h2>Purpose</h2>
-                <p>Langwarrin Community Centre Inc. is an incorporated association which has the charitable purpose of advancing social and public welfare.</p>
-            </section>
-        </div>
-    );
+  const [aboutData, setAboutData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/about?populate=deep`);
+        console.log(response.data); // Log the response to inspect it
+        setAboutData(response.data.data.attributes); // Correctly access the data from the response
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (!aboutData) {
+    return <div>Loading...</div>;
+  }
+
+  const { Title, Sections, Image } = aboutData; // Destructure the data
+
+  // Get the image URL if it exists
+  const imageUrl = Image?.data?.attributes?.url;
+
+  return (
+    <div className="information-section">
+      {/* Render sections dynamically */}
+      {Sections && Sections.map((section, index) => (
+        <section key={section.id}>
+          {section.Title && <h2>{section.Title}</h2>}
+          {section.Description1 && <p>{section.Description1}</p>}
+          {section.Description2 && <p>{section.Description2}</p>}
+        </section>
+      ))}
+    </div>
+  );
 }
 
 export default AboutSection;

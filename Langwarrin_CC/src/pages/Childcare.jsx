@@ -1,11 +1,28 @@
-//import React from "react";
+import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Grid from "../components/Grid";
+import axios from "axios";
+
 function Childcare() {
+  const [title, setTitle] = useState("Childcare and Youth"); // default title in case data hasn't loaded
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:1337/api/childcare");
+        const fetchedTitle = response.data.data.attributes.Title;
+        setTitle(fetchedTitle);
+      } catch (error) {
+        console.error("Error fetching childcare title from Strapi:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <Header/>
+      <Header />
       <h1
         style={{
           color: "#32CD32",
@@ -14,9 +31,9 @@ function Childcare() {
           margin: "20px 0",
         }}
       >
-        Childcare and Youth
+        {title}
       </h1>
-      <Grid></Grid>
+      <Grid />
       <Footer />
     </div>
   );
