@@ -1,5 +1,21 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface RoomCardRoomCard extends Schema.Component {
+  collectionName: 'components_room_card_room_cards';
+  info: {
+    displayName: 'RoomCard';
+    description: '';
+  };
+  attributes: {
+    RoomName: Attribute.String;
+    CasualHire: Attribute.String;
+    PermHire: Attribute.String;
+    CommGroups: Attribute.String;
+    Capacity: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
 export interface ListDotPoint extends Schema.Component {
   collectionName: 'components_list_dot_points';
   info: {
@@ -78,22 +94,6 @@ export interface CarouselCarouselItem extends Schema.Component {
   };
 }
 
-export interface RoomCardRoomCard extends Schema.Component {
-  collectionName: 'components_room_card_room_cards';
-  info: {
-    displayName: 'RoomCard';
-    description: '';
-  };
-  attributes: {
-    RoomName: Attribute.String;
-    CasualHire: Attribute.String;
-    PermHire: Attribute.String;
-    CommGroups: Attribute.String;
-    Capacity: Attribute.String;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-  };
-}
-
 export interface CardsCardText extends Schema.Component {
   collectionName: 'components_cards_card_texts';
   info: {
@@ -111,13 +111,13 @@ export interface CardsCardText extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'room-card.room-card': RoomCardRoomCard;
       'list.dot-point': ListDotPoint;
       'home-card.card-text': HomeCardCardText;
       'header.cover-image': HeaderCoverImage;
       'grid.grid-item': GridGridItem;
       'grid.grid-group': GridGridGroup;
       'carousel.carousel-item': CarouselCarouselItem;
-      'room-card.room-card': RoomCardRoomCard;
       'cards.card-text': CardsCardText;
     }
   }
