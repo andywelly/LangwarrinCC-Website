@@ -4,6 +4,8 @@ import { useForm, Controller } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import "./styles/FillForm.css";
 
+import ReCAPTCHA from "react-google-recaptcha";
+
 // Generic Form Component
 
 const GenericFillForm = () => {
@@ -52,6 +54,8 @@ const GenericFillForm = () => {
     setMouseOverColor(null);
   };
 
+  const [capVal, setCapVal] = useState(null)
+
   return (
     <div className="create">
       <h2> Contact Us </h2>
@@ -99,6 +103,11 @@ const GenericFillForm = () => {
 
         <label>Message</label>
         <textarea {...register("message")} />
+        
+        <ReCAPTCHA
+            sitekey="6Lcwy2oqAAAAACQ7wjth6CB3TyaAgOeOsSNYEd6i"
+            onChange={val => setCapVal(val)}
+          />
 
         <input 
           type="submit" 
@@ -106,6 +115,7 @@ const GenericFillForm = () => {
           style={{ backgroundColor: mouseOverColor }}
           onMouseOver={mouseOverOn}
           onMouseOut={mouseOverOff}
+          disabled = {!capVal}
         />
       </form>
     </div>

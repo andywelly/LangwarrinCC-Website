@@ -5,6 +5,8 @@ import {useForm, Controller} from 'react-hook-form';
 
 import "./styles/FillForm.css";
 import Swal from 'sweetalert2';
+import ReCAPTCHA from "react-google-recaptcha";
+//6Lcwy2oqAAAAACQ7wjth6CB3TyaAgOeOsSNYEd6i
 
 
 // npm i @emailjs/browser
@@ -56,6 +58,8 @@ const ChildcareFillForm = () => {
   const mouseOverOff = () => {
     setMouseOverColor(null);
   }
+
+  const [capVal, setCapVal] = useState(null)
     
   
 
@@ -76,7 +80,7 @@ const ChildcareFillForm = () => {
               required
             />
 
-          <label> Room Type </label>
+          <label> Type </label>
             <Controller
               name="childcare_type"
               control={control}
@@ -114,10 +118,16 @@ const ChildcareFillForm = () => {
 
           <label>Message</label>
           <textarea {...register("message")} />
+          <ReCAPTCHA
+            sitekey="6Lcwy2oqAAAAACQ7wjth6CB3TyaAgOeOsSNYEd6i"
+            onChange={val => setCapVal(val)}
+          />
+
           <input type="submit" value="Send"
             style = {{backgroundColor: mouseOverColor}}
             onMouseOver={mouseOverOn}
             onMouseOut={mouseOverOff}
+            disabled = {!capVal}
           />
         </form>
       </div>

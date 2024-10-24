@@ -6,6 +6,8 @@ import {useForm, Controller} from 'react-hook-form';
 import "./styles/FillForm.css";
 import Swal from 'sweetalert2';
 
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 // npm i @emailjs/browser
 
@@ -57,6 +59,8 @@ const ServiceFillForm = () => {
     setMouseOverColor(null);
   }
 
+  const [capVal, setCapVal] = useState(null)
+
   return (
       <div className="create">
         <h2> Course Enquiry and Enrolment </h2>
@@ -98,10 +102,17 @@ const ServiceFillForm = () => {
 
           <label>Message</label>
           <textarea {...register("message")} />
+
+          <ReCAPTCHA
+            sitekey="6Lcwy2oqAAAAACQ7wjth6CB3TyaAgOeOsSNYEd6i"
+            onChange={val => setCapVal(val)}
+          />
+
           <input type="submit" value="Send"
             style = {{backgroundColor: mouseOverColor}}
             onMouseOver={mouseOverOn}
             onMouseOut={mouseOverOff}
+            disabled = {!capVal} // user wont be able to click send button if didnt pass captcha
           />
         </form>
       </div>
