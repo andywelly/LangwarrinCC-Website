@@ -6,8 +6,8 @@ import axios from "axios";
 import { API_URL } from "../constants"; // Make sure API_URL is correctly set
 
 function Childcare() {
-  const [title, setTitle] = useState("Childcare and Youth"); // default title in case data hasn't loaded
-  const [description, setDescription] = useState(""); // default description
+  const [title, setTitle] = useState("Childcare and Youth"); // Default title in case data hasn't loaded
+  const [description, setDescription] = useState(""); // Default description
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +15,7 @@ function Childcare() {
         const response = await axios.get(`${API_URL}/childcare?populate=deep`);
         const fetchedData = response.data.data.attributes;
         setTitle(fetchedData.Title);
-        setDescription(fetchedData.Description);
+        setDescription(fetchedData.Description || ""); // Fallback if description is missing
       } catch (error) {
         console.error("Error fetching childcare data from Strapi:", error);
       }
@@ -44,7 +44,7 @@ function Childcare() {
                 <br />
               </span>
             ))
-          : null}
+          : ""} {/* Message if description is empty */}
       </div>
       <Grid />
       <Footer />
