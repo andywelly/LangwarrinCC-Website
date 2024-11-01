@@ -827,6 +827,7 @@ export interface ApiChildcareChildcare extends Schema.SingleType {
     singularName: 'childcare';
     pluralName: 'childcares';
     displayName: 'Childcare';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -963,9 +964,6 @@ export interface ApiServiceService extends Schema.SingleType {
     Heading1: Attribute.String;
     Text1: Attribute.Text;
     ServiceGroup: Attribute.Component<'grid.grid-group', true>;
-    Heading2: Attribute.String;
-    Text2: Attribute.Text;
-    Icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     pdf: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

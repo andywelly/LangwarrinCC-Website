@@ -11,19 +11,17 @@
       "type": "string"
     },
     "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "Description": {
-      "type": "text"
-    },
-    "ShortDescription": {
       "type": "text"
     }
   }

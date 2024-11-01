@@ -4,7 +4,8 @@
   "info": {
     "singularName": "childcare",
     "pluralName": "childcares",
-    "displayName": "Childcare"
+    "displayName": "Childcare",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

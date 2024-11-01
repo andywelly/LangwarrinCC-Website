@@ -64,7 +64,6 @@ export interface GridGridItem extends Schema.Component {
     Title: Attribute.String;
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
     Description: Attribute.Text;
-    ShortDescription: Attribute.Text;
   };
 }
 
