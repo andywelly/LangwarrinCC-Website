@@ -1,179 +1,64 @@
+import React, { useEffect, useState } from 'react';
 import { Container } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-
-import possumImg from "../assets/possum.png";
-
-// Images for computer/business courses category
-import techLesson from '../assets/TechLesson.jpg';
-import freeIpadWorkshop from '../assets/courses images/ipadWorkshop.png'
-import computerClass from '../assets/courses images/computerClass.png';
-
-// Images for literacy/further education courses category
-import readingWriting from '../assets/courses images/readingWriting.png';
-import leadership from '../assets/courses images/leadership.png';
-import stem from '../assets/courses images/stemCourse.png';
-import brainBenders from '../assets/courses images/brainBenders.png';
-
-// Images for craft/hobbies education courses category
-import knit from '../assets/courses images/knit.png';
-import ukulele from '../assets/courses images/ukulele.png';
-import pathchwork from '../assets/courses images/patchwork.png';
-import scrabble from '../assets/courses images/scrabble.png';
-import boatLicense from '../assets/courses images/boatLicense.png';
-
-// Images for craft/hobbies education courses category
-import stillness from '../assets/Stillness.png';
-import exercise from '../assets/Exercise.jpg';
-import weightwatchers from '../assets/courses images/weightWatcher.png';
-import kungfu from '../assets/courses images/kungfu.png';
-import reiki from '../assets/courses images/reiki.png';
-import ageStrong from '../assets/courses images/ageStrong.png';
-
+import axios from 'axios';
 import './styles/Grid.css';
 
+import { API_URL } from "../constants"; // Make sure API_URL is correctly set
 
 function ServicesGridV2() {
-    const cardData = [
-        {   name: "Computer/Business Courses",
-            courses: [
-                {
-                    imgSrc: freeIpadWorkshop,
-                    title: "iPhone / iPad Workshops (Free) ",
-                    text: "We provide engaging early learning experiences for children from 6 weeks to 4 years old.",
-                },
-                {
-                    imgSrc: techLesson,
-                    title: "Computers for Home and Workplace",
-                    text: "Let us shine some light on the world of computers with our 8 week computer course for beginners",
-                },
-                {
-                    imgSrc: computerClass,
-                    title: "Computer Classes for Disability Support",
-                    text: "This course is for people with an intellectual disability to assist them with computer techniques.",
-                },
-            ]
-        },
-        {   name: "Literacy / Further Education",
-            courses: [
-                {
-                    imgSrc: readingWriting,
-                    title: "Reading and Writing",
-                    text: "This course is for people with an intellectual disability to assist them with reading & writing techniques",
-                },
-                {
-                    imgSrc: leadership,
-                    title: "Essential Leadership Skills",
-                    text: "This one-day-a-week program empowers all individuals with disabilities to build their confidence and grow as a leader.",
-                },
-                {
-                    imgSrc: stem,
-                    title: "S.T.E.M",
-                    text: "STEM is an approach to learning and development that intergrates the areas of science, technology, engineering and mathematics",
-                },
-                {
-                    imgSrc: brainBenders,
-                    title: "Brain Benders",
-                    text: "Group activity that could help you in your everyday life, work an study",
-                },
-            ]
-        },
-        {   name: "Craft / Hobbies / Fun",
-            courses: [
-                {
-                    imgSrc: knit,
-                    title: "Close Knit Community",
-                    text: "Join our Knitting Group Course to learn new techniques and create beautiful projects in a supportive environment, perfect for all skill levels!",
-                },
-                {
-                    imgSrc: ukulele,
-                    title: "Ukulele Classes",
-                    text: "Weekly sessions led by an experienced teacher, come along and join our happy group!",
-                },
-                {
-                    imgSrc: pathchwork,
-                    title: "PATCHWORK Patch'n'Chat",
-                    text: "Come along and bring your own patchwork project.  Meet new people in a relaxed and friendly group.",
-                },
-                {
-                    imgSrc: scrabble,
-                    title: "Scrabble",
-                    text: "Are you keen on playing Scrabble? If so, then come along and join this group",
-                },
-                {
-                    imgSrc: boatLicense,
-                    title: "Boat License",
-                    text: "Join our Boat License Course to master essential boating skills and regulations in flexible half-day evening, or private sessions",
-                },
-            ]
-        },
-        {   name: "Exercise / Health / Wellbeing",
-            courses: [
-                {
-                    imgSrc: stillness,
-                    title: "Moments of Stillness",
-                    text: "A time to gather for reflection, stillness, sharing, respect and care!",
-                },
-                {
-                    imgSrc: exercise,
-                    title: "Starting Out - Exercise",
-                    text: "Exercise for all ages!",
-                },
-                {
-                    imgSrc: weightwatchers,
-                    title: "Weight Watchers",
-                    text: "It's about trusting the process and believing in yourself",
-                },
-                {
-                    imgSrc: kungfu,
-                    title: "Kid's Kung Fu & Adult Kickboxing",
-                    text: "An interesting mixture of Boxing, Grappling, Kickboxing, Wing Chun and Self Defence. An exciting activity which provides an opportunity to develop and improve strength, co-ordination, balance, self discipline and self esteem.",
-                },
-                {
-                    imgSrc: reiki,
-                    title: "Reiki Healing",
-                    text: "A hands-on healing to help you heal yourself.  Get on with your life feeling stronger and able to cope.",
-                },
-                {
-                    imgSrc: ageStrong,
-                    title: "Age Strong",
-                    text: "Strength and balance program using resistance & weights, designed for older people. In partnership with Peninsula Health.",
-                },
-            ]
-        },
-    ];
-  
+    const [serviceGroups, setServiceGroups] = useState([]);
+
+    useEffect(() => {
+        const fetchCardData = async () => {
+            try {
+                const response = await axios.get(`${API_URL}/service?populate=deep`);
+                const groups = response.data.data.attributes.ServiceGroup; // Access the ServiceGroup attribute
+                setServiceGroups(groups);
+            } catch (error) {
+                console.error('Error fetching service groups:', error);
+            }
+        };
+
+        fetchCardData();
+    }, []);
+
+    if (!serviceGroups || serviceGroups.length === 0) {
+        return <div>Loading...</div>; // Show loading state while fetching data
+    }
+
     return (
         <div style={{ width: '80%', margin: '0 auto' }}>
-            {cardData.map((main) => (
-                <Row key={main.name} className="main-category" style={{ marginBottom: '30px' }}>
-                    <article><center>{main.name}</center></article>
+            {serviceGroups.map((group) => (
+                <Row key={group.id} className="main-category" style={{ marginBottom: '30px' }}>
+                    <article><center>{group.Heading}</center></article>
                     <div className="grid-container">
-                        <Row xs={3} md={3} className="justify-content-md-center">
-                            {main.courses.map((card) => (
-                                <Col key={card.title}>
+                        <Row xs={1} md={3} className="justify-content-md-center">
+                            {group.ServiceCard.map((card) => (
+                                <Col key={card.id}>
                                     <Row className="align-items-center justify-content-md-center">
-                                        <Col md={10} className="courseCard"> 
+                                        <Col md={10} className="courseCard">
                                             <Container>
                                                 <Row>
                                                     <Card.Img
                                                         variant="top"
-                                                        src={card.imgSrc}
-                                                        alt={card.title}
+                                                        src={card.Image.data[0].attributes.url} // Access the image URL
+                                                        alt={card.Title}
                                                         className="img-fluid card-img"
                                                     />
                                                 </Row>
                                                 <Row>
-                                                    <div className="title">{card.title}</div>
+                                                    <div className="title">{card.Title}</div>
                                                 </Row>
                                                 <Row>
                                                     <Card.Body>
-                                                        <p>{card.text}</p>
+                                                        <p>{card.Description}</p> {/* Use Description instead of text */}
                                                         <Link to="/computer">
-                                                            <Button className="card-button">Read More</Button>
+                                                            <Button className="card-button">Book Now</Button>
                                                         </Link>
                                                     </Card.Body>
                                                 </Row>
