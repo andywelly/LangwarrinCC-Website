@@ -53,7 +53,7 @@ function Computer() {
         <div>
             <Header/>
             <p/><p/><p/>
-            <article><center>Computer Business Cources <br/> <br/></center></article>
+            <article><center>Computer and Business Courses <br/> <br/></center></article>
             {cardData.map((course) => (
                 <Col key={course} className="courseCard">
                     <Container>
