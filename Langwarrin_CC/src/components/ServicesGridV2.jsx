@@ -173,7 +173,7 @@ function ServicesGridV2() {
                                                     <Card.Body>
                                                         <p>{card.text}</p>
                                                         <Link to="/computer">
-                                                            <Button className="card-button">Read More</Button>
+                                                            <Button className="card-button">Learn More</Button>
                                                         </Link>
                                                     </Card.Body>
                                                 </Row>
