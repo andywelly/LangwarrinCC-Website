@@ -56,8 +56,16 @@ function ServicesGridV2() {
                                                 </Row>
                                                 <Row>
                                                     <Card.Body>
-                                                        <p>{card.Description}</p> {/* Use Description instead of text */}
-                                                        <Link to="/computer">
+                                                    <p>
+                                                        {card.Description.split('\n').map((line, index) => (
+                                                            <span key={index}>
+                                                                {line}
+                                                                <br />
+                                                            </span>
+                                                        ))}
+                                                    </p>
+
+                                                        <Link to="/serviceForms">
                                                             <Button className="card-button">Book Now</Button>
                                                         </Link>
                                                     </Card.Body>
