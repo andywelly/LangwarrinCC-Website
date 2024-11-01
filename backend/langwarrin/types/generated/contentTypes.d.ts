@@ -835,6 +835,7 @@ export interface ApiChildcareChildcare extends Schema.SingleType {
   attributes: {
     Title: Attribute.String;
     Card: Attribute.Component<'grid.grid-item', true>;
+    Description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -886,6 +887,39 @@ export interface ApiFooterFooter extends Schema.SingleType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFormForm extends Schema.SingleType {
+  collectionName: 'forms';
+  info: {
+    singularName: 'form';
+    pluralName: 'forms';
+    displayName: 'Form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    EmploymentPDF: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    MembershipPDF: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    AnnualReportPDF: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1004,6 +1038,7 @@ declare module '@strapi/types' {
       'api::about.about': ApiAboutAbout;
       'api::childcare.childcare': ApiChildcareChildcare;
       'api::footer.footer': ApiFooterFooter;
+      'api::form.form': ApiFormForm;
       'api::home.home': ApiHomeHome;
       'api::room-hire.room-hire': ApiRoomHireRoomHire;
       'api::service.service': ApiServiceService;

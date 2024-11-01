@@ -33,57 +33,83 @@ function Grid() {
   return (
     <div className="grid-container">
       <Row xs={1} md={1} className="g-4 row-align-center">
-        {cardData.map((card, idx) => (
-          <Col key={idx}>
-            <Row className="align-items-center justify-content-center">
-              {idx % 2 === 0 ? (
-                <>
-                  <Col md={6}>
-                    <Card.Img
-                      variant="top"
-                      src={card.Image.data.attributes.url} // Fetch the image URL from Strapi
-                      alt={card.Title}
-                      className="img-fluid card-img"
-                    />
-                  </Col>
-                  <Col md={6}>
-                    <Card.Body>
-                      <Card.Title className="card-title">
-                        {card.Title}
-                      </Card.Title>
-                      <Card.Text>{card.Text}</Card.Text>
-                      <Link to={ChildcareFormsLink}>
-                        <Button className="card-button">Read More</Button>
-                      </Link>
-                    </Card.Body>
-                  </Col>
-                </>
-              ) : (
-                <>
-                  <Col md={6} className="order-md-2">
-                    <Card.Img
-                      variant="top"
-                      src={card.Image.data.attributes.url} // Fetch the image URL from Strapi
-                      alt={card.Title}
-                      className="img-fluid card-img"
-                    />
-                  </Col>
-                  <Col md={6} className="order-md-1">
-                    <Card.Body>
-                      <Card.Title className="card-title">
-                        {card.Title}
-                      </Card.Title>
-                      <Card.Text>{card.Text}</Card.Text>
-                      <Link to={ChildcareFormsLink}>
-                        <Button className="card-button">Read More</Button>
-                      </Link>
-                    </Card.Body>
-                  </Col>
-                </>
-              )}
-            </Row>
-          </Col>
-        ))}
+        {cardData.map((card, idx) => {
+          // Get the URL if it exists in the image data
+          const imageUrl = card.Image?.data?.[0]?.attributes?.url || '';
+
+          return (
+            <Col key={idx}>
+              <Row className="align-items-center justify-content-center">
+                {idx % 2 === 0 ? (
+                  <>
+                    <Col md={6}>
+                      {imageUrl && (
+                        <Card.Img
+                          variant="top"
+                          src={imageUrl}
+                          alt={card.Title}
+                          className="img-fluid card-img"
+                        />
+                      )}
+                    </Col>
+                    <Col md={6}>
+                      <Card.Body>
+                        <Card.Title className="card-title">
+                          {card.Title}
+                        </Card.Title>
+                        <Card.Text>
+                          {card.Description
+                            ? card.Description.split('\n').map((line, index) => (
+                                <span key={index}>
+                                  {line}
+                                  <br />
+                                </span>
+                              ))
+                            : null}
+                        </Card.Text>
+                        <Link to={ChildcareFormsLink}>
+                          <Button className="card-button">Book Now</Button>
+                        </Link>
+                      </Card.Body>
+                    </Col>
+                  </>
+                ) : (
+                  <>
+                    <Col md={6} className="order-md-2">
+                      {imageUrl && (
+                        <Card.Img
+                          variant="top"
+                          src={imageUrl}
+                          alt={card.Title}
+                          className="img-fluid card-img"
+                        />
+                      )}
+                    </Col>
+                    <Col md={6} className="order-md-1">
+                      <Card.Body>
+                        <Card.Title className="card-title">
+                          {card.Title}
+                        </Card.Title>
+                        <Card.Text>
+                          {card.Description
+                            ? card.Description.split('\n').map((line, index) => (
+                                <span key={index}>
+                                  {line}
+                                  <br />
+                                </span>
+                              ))
+                            : null}
+                        </Card.Text>                        <Link to={ChildcareFormsLink}>
+                          <Button className="card-button">Book Now</Button>
+                        </Link>
+                      </Card.Body>
+                    </Col>
+                  </>
+                )}
+              </Row>
+            </Col>
+          );
+        })}
       </Row>
     </div>
   );

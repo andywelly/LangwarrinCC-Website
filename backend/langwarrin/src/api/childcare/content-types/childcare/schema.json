@@ -19,6 +19,9 @@
       "type": "component",
       "repeatable": true,
       "component": "grid.grid-item"
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }
