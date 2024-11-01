@@ -852,105 +852,6 @@ export interface ApiChildcareChildcare extends Schema.SingleType {
   };
 }
 
-export interface ApiCommunityCommunity extends Schema.CollectionType {
-  collectionName: 'communities';
-  info: {
-    singularName: 'community';
-    pluralName: 'communities';
-    displayName: 'Community';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::community.community',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::community.community',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiComputerComputer extends Schema.CollectionType {
-  collectionName: 'computers';
-  info: {
-    singularName: 'computer';
-    pluralName: 'computers';
-    displayName: 'Computer';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Description: Attribute.Blocks;
-    ShortDescription: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::computer.computer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::computer.computer',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiEducationEducation extends Schema.CollectionType {
-  collectionName: 'educations';
-  info: {
-    singularName: 'education';
-    pluralName: 'educations';
-    displayName: 'Education';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Description: Attribute.Blocks;
-    ShortDescription: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::education.education',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::education.education',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -988,73 +889,6 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
-export interface ApiHealthHealth extends Schema.CollectionType {
-  collectionName: 'healths';
-  info: {
-    singularName: 'health';
-    pluralName: 'healths';
-    displayName: 'Health';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Description: Attribute.Blocks;
-    ShortDescription: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::health.health',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::health.health',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHobbyHobby extends Schema.CollectionType {
-  collectionName: 'hobbies';
-  info: {
-    singularName: 'hobby';
-    pluralName: 'hobbies';
-    displayName: 'Hobby';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Blocks;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    ShortDescription: Attribute.Blocks;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::hobby.hobby',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::hobby.hobby',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiHomeHome extends Schema.SingleType {
   collectionName: 'homes';
   info: {
@@ -1076,35 +910,6 @@ export interface ApiHomeHome extends Schema.SingleType {
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRoomRoom extends Schema.CollectionType {
-  collectionName: 'rooms';
-  info: {
-    singularName: 'room';
-    pluralName: 'rooms';
-    displayName: 'Room';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Name: Attribute.String;
-    Capacity: Attribute.Integer;
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    PermHireFee: Attribute.String;
-    CommHireFee: Attribute.String;
-    Notes: Attribute.Text;
-    CasualHire: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::room.room', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1200,14 +1005,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::childcare.childcare': ApiChildcareChildcare;
-      'api::community.community': ApiCommunityCommunity;
-      'api::computer.computer': ApiComputerComputer;
-      'api::education.education': ApiEducationEducation;
       'api::footer.footer': ApiFooterFooter;
-      'api::health.health': ApiHealthHealth;
-      'api::hobby.hobby': ApiHobbyHobby;
       'api::home.home': ApiHomeHome;
-      'api::room.room': ApiRoomRoom;
       'api::room-hire.room-hire': ApiRoomHireRoomHire;
       'api::service.service': ApiServiceService;
     }
