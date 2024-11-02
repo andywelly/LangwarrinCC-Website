@@ -9,6 +9,11 @@
   "attributes": {
     "Heading": {
       "type": "string"
+    },
+    "ServiceCard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "grid.grid-item"
     }
   }
 }

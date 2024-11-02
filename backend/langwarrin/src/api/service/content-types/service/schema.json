@@ -23,23 +23,6 @@
       "repeatable": true,
       "component": "grid.grid-group"
     },
-    "Heading2": {
-      "type": "string"
-    },
-    "Text2": {
-      "type": "text"
-    },
-    "Icon": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "pdf": {
       "type": "media",
       "multiple": false,

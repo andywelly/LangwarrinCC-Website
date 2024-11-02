@@ -1,11 +1,31 @@
-//import React from "react";
+import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Grid from "../components/Grid";
+import axios from "axios";
+import { API_URL } from "../constants"; // Make sure API_URL is correctly set
+
 function Childcare() {
+  const [title, setTitle] = useState("Childcare and Youth"); // Default title in case data hasn't loaded
+  const [description, setDescription] = useState(""); // Default description
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/childcare?populate=deep`);
+        const fetchedData = response.data.data.attributes;
+        setTitle(fetchedData.Title);
+        setDescription(fetchedData.Description || ""); // Fallback if description is missing
+      } catch (error) {
+        console.error("Error fetching childcare data from Strapi:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <Header/>
+      <Header />
       <h1
         style={{
           color: "#32CD32",
@@ -14,9 +34,19 @@ function Childcare() {
           margin: "20px 0",
         }}
       >
-        Childcare and Youth
+        {title}
       </h1>
-      <Grid></Grid>
+      <div style={{ textAlign: "center", margin: "20px" }}>
+        {description
+          ? description.split('\n').map((line, index) => (
+              <span key={index}>
+                {line}
+                <br />
+              </span>
+            ))
+          : ""} {/* Message if description is empty */}
+      </div>
+      <Grid />
       <Footer />
     </div>
   );

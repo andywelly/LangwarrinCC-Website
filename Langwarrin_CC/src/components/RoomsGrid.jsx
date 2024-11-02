@@ -1,88 +1,37 @@
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-
-import mainRoom from "../assets/rooms/mainRoom.png";
-import craigRoom from "../assets/rooms/craigRoom.png";
-import hempelRoom from "../assets/rooms/hempelRoom.png";
-import hamptonRoom from "../assets/rooms/hamptonRoom.png";
-import backSpareOffice from "../assets/rooms/backSpareOffice.png";
-
-import './styles/Grid.css'; // Import the updated CSS file
-
-
+import { API_URL } from "../constants"; // Ensure API_URL is correctly set
 const BookingFormsLink = "/bookingForms";
 
 function RoomsGrid() {
-  const cardData = [
-    {
-      imgSrc: mainRoom,
-      title: "Hall Full Area",
-      text: (
-        <>
-          <p>Casual Hirers: $50.00</p>
-          <p>Permanent Hirers (non-community groups): $35.00</p>
-          <p>Community Group: $25.00</p>
-          <p>Capacity: 100 people</p>
-        </>
-      )
-    },
-    {
-      imgSrc: craigRoom,
-      title: "Craig Room",
-      text: (
-        <>
-          <p>Casual Hirers: $30.00</p>
-          <p>Permanent Hirers (non-community groups): $23.00</p>
-          <p>Community Group: $15.00</p>
-          <p>Capacity: 20 people</p>
-        </>
-      )
-    },
-    {
-      imgSrc: hempelRoom,
-      title: "Hempel Room",
-      text: (
-        <>
-          <p>Casual Hirers: $30.00</p>
-          <p>Permanent Hirers (non-community groups): $23.00</p>
-          <p>Community Group: $15.00</p>
-          <p>Capacity: 10 people</p>
-        </>
-      )
-    },
-    {
-      imgSrc: hamptonRoom,
-      title: "Hampton Room",
-      text: (
-        <>
-          <p>Casual Hirers: $31.00</p>
-          <p>Permanent Hirers (non-community groups): $28.00</p>
-          <p>Community Group: $17.00</p>
-          <p>Capacity: 25 people</p>
-        </>
-      )
-    },
-    {
-      imgSrc: backSpareOffice,
-      title: "Back Spare Office",
-      text: (
-        <>
-          <p>Casual Hirers: $25.00</p>
-          <p>Permanent Hirers (non-community groups): $19.00</p>
-          <p>Community Group: $17.00</p>
-          <p>Capacity: 6 people</p>
-        </>
-      )
-    },
-  ];
+  const [roomsData, setRoomsData] = useState([]);
+
+  useEffect(() => {
+    const fetchRoomsData = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/room-hire?populate=deep`);
+        const rooms = response.data.data.attributes.Room; // Adjust to match the API structure
+        setRoomsData(rooms);
+      } catch (error) {
+        console.error("Error fetching rooms data:", error);
+      }
+    };
+    fetchRoomsData();
+  }, []);
+
+  if (!roomsData || roomsData.length === 0) {
+    return <div>Loading...</div>; // Show loading state
+  }
 
   return (
     <div className="grid-container">
       <Row xs={1} md={1} className="g-4 row-align-center">
-        {cardData.map((card, idx) => (
+        {roomsData.map((room, idx) => (
           <Col key={idx}>
             <Row className="align-items-center justify-content-center">
               {idx % 2 === 0 ? (
@@ -90,17 +39,22 @@ function RoomsGrid() {
                   <Col md={6}>
                     <Card.Img
                       variant="top"
-                      src={card.imgSrc}
-                      alt={card.title}
+                      src={room.Image.data[0].attributes.url} // Fetch image URL
+                      alt={room.RoomName}
                       className="img-fluid card-img"
                     />
                   </Col>
                   <Col md={6}>
                     <Card.Body>
                       <Card.Title className="card-title">
-                        {card.title}
+                        {room.RoomName}
                       </Card.Title>
-                      <Card.Text>{card.text}</Card.Text>
+                      <Card.Text>
+                        <p>Casual Hirers: {room.CasualHire}</p>
+                        <p>Permanent Hirers (non-community groups): {room.PermHire}</p>
+                        <p>Community Group: {room.CommGroups}</p>
+                        <p>Capacity: {room.Capacity}</p>
+                      </Card.Text>
                       <Link to={BookingFormsLink}>
                         <Button className="card-button">Hire Now</Button>
                       </Link>
@@ -112,19 +66,23 @@ function RoomsGrid() {
                   <Col md={6} className="order-md-2">
                     <Card.Img
                       variant="top"
-                      src={card.imgSrc}
-                      alt={card.title}
+                      src={room.Image.data[0].attributes.url} // Fetch image URL
+                      alt={room.RoomName}
                       className="img-fluid card-img"
                     />
                   </Col>
                   <Col md={6} className="order-md-1">
                     <Card.Body>
                       <Card.Title className="card-title">
-                        {card.title}
+                        {room.RoomName}
                       </Card.Title>
-                      <Card.Text>{card.text}</Card.Text>
-                      <Link to={BookingFormsLink}>
-                        <Button className="card-button">Hire Now</Button>
+                      <Card.Text>
+                        <p>Casual Hirers: {room.CasualHire}</p>
+                        <p>Permanent Hirers (non-community groups): {room.PermHire}</p>
+                        <p>Community Group: {room.CommGroups}</p>
+                        <p>Capacity: {room.Capacity}</p>
+                      </Card.Text>
+                      <Link to={BookingFormsLink}>                        <Button className="card-button">Hire Now</Button>
                       </Link>
                     </Card.Body>
                   </Col>
@@ -135,7 +93,6 @@ function RoomsGrid() {
         ))}
       </Row>
     </div>
-    
   );
 }
 

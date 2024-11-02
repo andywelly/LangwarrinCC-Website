@@ -12,8 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Subtext": {
-      "type": "text"
+    "Title": {
+      "type": "string"
+    },
+    "Room": {
+      "displayName": "RoomCard",
+      "type": "component",
+      "repeatable": true,
+      "component": "room-card.room-card"
+    },
+    "HireRules": {
+      "type": "blocks"
     },
     "Description": {
       "type": "blocks"

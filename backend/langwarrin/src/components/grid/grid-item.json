@@ -7,9 +7,12 @@
   },
   "options": {},
   "attributes": {
+    "Title": {
+      "type": "string"
+    },
     "Image": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images",
@@ -18,13 +21,7 @@
         "audios"
       ]
     },
-    "Link": {
-      "type": "string"
-    },
-    "Title": {
-      "type": "string"
-    },
-    "Text": {
+    "Description": {
       "type": "text"
     }
   }
