@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_room_card_room_cards",
+  "info": {
+    "displayName": "RoomCard",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "RoomName": {
+      "type": "string"
+    },
+    "CasualHire": {
+      "type": "string"
+    },
+    "PermHire": {
+      "type": "string"
+    },
+    "CommGroups": {
+      "type": "string"
+    },
+    "Capacity": {
+      "type": "string"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

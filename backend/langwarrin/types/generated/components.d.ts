@@ -1,17 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ListDotPoint extends Schema.Component {
-  collectionName: 'components_list_dot_points';
-  info: {
-    displayName: 'DotPoint';
-    icon: 'bulletList';
-    description: '';
-  };
-  attributes: {
-    DotPoint: Attribute.Text;
-  };
-}
-
 export interface HomeCardCardText extends Schema.Component {
   collectionName: 'components_home_card_card_texts';
   info: {
@@ -37,6 +25,31 @@ export interface HeaderCoverImage extends Schema.Component {
   };
 }
 
+export interface CarouselCarouselItem extends Schema.Component {
+  collectionName: 'components_carousel_carousel_items';
+  info: {
+    displayName: 'CarouselItem';
+    icon: 'grid';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Caption: Attribute.Text;
+  };
+}
+
+export interface ListDotPoint extends Schema.Component {
+  collectionName: 'components_list_dot_points';
+  info: {
+    displayName: 'DotPoint';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    DotPoint: Attribute.Text;
+  };
+}
+
 export interface GridGridItem extends Schema.Component {
   collectionName: 'components_grid_grid_items';
   info: {
@@ -45,10 +58,9 @@ export interface GridGridItem extends Schema.Component {
     description: '';
   };
   attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Link: Attribute.String;
     Title: Attribute.String;
-    Text: Attribute.Text;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Description: Attribute.Text;
   };
 }
 
@@ -61,19 +73,7 @@ export interface GridGridGroup extends Schema.Component {
   };
   attributes: {
     Heading: Attribute.String;
-  };
-}
-
-export interface CarouselCarouselItem extends Schema.Component {
-  collectionName: 'components_carousel_carousel_items';
-  info: {
-    displayName: 'CarouselItem';
-    icon: 'grid';
-    description: '';
-  };
-  attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Caption: Attribute.Text;
+    ServiceCard: Attribute.Component<'grid.grid-item', true>;
   };
 }
 
@@ -91,16 +91,33 @@ export interface CardsCardText extends Schema.Component {
   };
 }
 
+export interface RoomCardRoomCard extends Schema.Component {
+  collectionName: 'components_room_card_room_cards';
+  info: {
+    displayName: 'RoomCard';
+    description: '';
+  };
+  attributes: {
+    RoomName: Attribute.String;
+    CasualHire: Attribute.String;
+    PermHire: Attribute.String;
+    CommGroups: Attribute.String;
+    Capacity: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'list.dot-point': ListDotPoint;
       'home-card.card-text': HomeCardCardText;
       'header.cover-image': HeaderCoverImage;
+      'carousel.carousel-item': CarouselCarouselItem;
+      'list.dot-point': ListDotPoint;
       'grid.grid-item': GridGridItem;
       'grid.grid-group': GridGridGroup;
-      'carousel.carousel-item': CarouselCarouselItem;
       'cards.card-text': CardsCardText;
+      'room-card.room-card': RoomCardRoomCard;
     }
   }
 }
