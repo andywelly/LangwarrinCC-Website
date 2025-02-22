@@ -10,8 +10,8 @@ This project is a full-stack web application developed for the IT Project COMP30
 
 ## Website Links
 
-*   **Deployed Website:** [Langwarrin Community Centre Website](https://andywelly.github.io/LangwarrinCC-Deploy/#/)
-*   **Alternative Deployment (Heroku - Under Maintenance):** [Langwarrin Community Centre Website (Heroku)](https://langwarrin-cc-website-3efcfff29c9c.herokuapp.com/)
+*   **Deployed Website (AWS):** [Langwarrin Community Centre Website](https://recaptcha.deupk8kmpxo1x.amplifyapp.com/)
+*   **Previous Deployment (Heroku):** [Langwarrin Community Centre Website (Heroku)](https://langwarrin-cc-website-3efcfff29c9c.herokuapp.com/)
 
 ## Strapi Admin Panel
 
